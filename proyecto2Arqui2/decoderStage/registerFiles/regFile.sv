@@ -2,20 +2,20 @@ module regFile #(
     parameter registerSize = 32,
     parameter registerQuantity = 4,
     parameter selectionBits = 2, 
-    parameter vectorSize = 4)
+    parameter vecSize = 4)
 (
     input clk, reset,
     input regWrEnSc, regWrEnVec, // Enable signals for writing to scalar and vector registers.
     input [selectionBits-1:0] rSel1, rSel2, // Register selection signal for reading.
     input [selectionBits-1:0] regToWrite, // Register where the new data will be written.
 
-    input [vectorSize-1:0] [registerSize-1:0] dataIn, // Input data for the registers, with a vector size. Scalars just first element
-    output [vectorSize-1:0] [registerSize-1:0] operand1, operand2 // First output data for the read operands, with a vector size.
+    input [vecSize-1:0] [registerSize-1:0] dataIn, // Input data for the registers, with a vector size. Scalars just first element
+    output [vecSize-1:0] [registerSize-1:0] operand1, operand2 // First output data for the read operands, with a vector size.
 );
 
     logic [registerSize-1:0] scalar_reg1Out, scalar_reg2Out;
-    logic [vectorSize-1:0] [registerSize-1:0] vector_reg1Out, vector_reg2Out; 
-    logic [vectorSize-1:0] [registerSize-1:0] vectorized_scalar_reg1Out, vectorized_scalar_reg2Out;
+    logic [vecSize-1:0] [registerSize-1:0] vector_reg1Out, vector_reg2Out; 
+    logic [vecSize-1:0] [registerSize-1:0] vectorized_scalar_reg1Out, vectorized_scalar_reg2Out;
 
     scalarRegisterFile #(registerSize, 16, selectionBits) scalarRegisters(
         .clk(clk), .reset(reset),
@@ -24,15 +24,15 @@ module regFile #(
         .reg1Out(scalar_reg1Out), .reg2Out(scalar_reg2Out)
     );
 
-    vector_extender #(vectorSize, registerSize) scalar_reg1_extender(
+    vector_extender #(vecSize, registerSize) scalar_reg1_extender(
         .inData(scalar_reg1Out), .outData(vectorized_scalar_reg1Out) // Vectorizes the scalar across all elements of a vector
     );
-    vector_extender #(vectorSize, registerSize) scalar_reg2_extender(
+    vector_extender #(vecSize, registerSize) scalar_reg2_extender(
         .inData(scalar_reg2Out), .outData(vectorized_scalar_reg2Out) // Vectorizes the scalar across all elements of a vector
     );
 
     vecRegisterFile #(
-        registerSize, registerQuantity, selectionBits-1, vectorSize
+        registerSize, registerQuantity, selectionBits-1, vecSize
     ) vectorialRegisters(
         .clk(clk), .reset(reset),
         .regWrEn(regWrEnVec), .rSel1(rSel1), .rSel2(rSel2), 

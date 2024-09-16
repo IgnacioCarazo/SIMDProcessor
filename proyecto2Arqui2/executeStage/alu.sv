@@ -11,7 +11,7 @@ module alu #(
         xor_res, inc_res;
     
     assign sum_res = operand1 + operand2;
-    assign sub_res = operand1 - operand2;
+    assign sub_res = operand1 - operand2; //todo no he visto que se realicen restas en el algoritmo
     assign mult_res = operand1 * operand2;
 	 // assign tbd_inst_1 = ;
      // assign tbd_inst_2 = ;
