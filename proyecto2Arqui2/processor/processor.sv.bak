@@ -52,8 +52,8 @@ module processor #(
         .registerSize(registerSize), .registerQuantity(registerQuantity),
         .selectionBits(selectionBits), .vecSize(vecSize)
     ) registerFile(
-        .clk(clk), .reset(rst), .regWrEnSc(regWriteEnSc_chip),
-        .regWrEnVec(regWriteEnVec_chip), .rSel1(instruction_d[instructionSize - 5: instructionSize - 8]),
+        .clk(clk), .reset(rst), .regWrEnScalar(regWriteEnSc_chip),
+        .regWrEnVector(regWriteEnVec_chip), .rSel1(instruction_d[instructionSize - 5: instructionSize - 8]),
         .rSel2(instruction_d[instructionSize - 9: instructionSize - 12]), .regToWrite(RegToWrite_chip),
         .dataIn(writeBackData_Mem), .operand1(operand1_dec), .operand2(operand2_dec)
     );

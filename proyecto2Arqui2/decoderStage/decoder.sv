@@ -40,7 +40,7 @@ module decoder #(parameter N=24, parameter registerSize = 32)
 
     assign RegToWrite = instruction[N - 5:N - 8];
 
-	 assign Immediate = instruction[N - 9:0];
+	assign Immediate = instruction[N - 9:0]; 
     assign writeMemFrom = memoryInstruction && ~instruction[N - 3];
 
     assign regWriteEn = (memoryInstruction && instruction[N - 4]) | ~instruction[N -1];
