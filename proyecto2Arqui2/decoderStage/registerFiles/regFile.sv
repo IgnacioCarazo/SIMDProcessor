@@ -24,10 +24,10 @@ module regFile #(
         .reg1Out(scalar_reg1Out), .reg2Out(scalar_reg2Out)
     );
 
-    vector_extender #(vecSize, registerSize) scalar_reg1_extender(
+    vectorExecutetender #(vecSize, registerSize) scalar_reg1Executetender(
         .inData(scalar_reg1Out), .outData(vectorized_scalar_reg1Out) // Vectorizes the scalar across all elements of a vector
     );
-    vector_extender #(vecSize, registerSize) scalar_reg2_extender(
+    vectorExecutetender #(vecSize, registerSize) scalar_reg2Executetender(
         .inData(scalar_reg2Out), .outData(vectorized_scalar_reg2Out) // Vectorizes the scalar across all elements of a vector
     );
 

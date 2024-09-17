@@ -12,7 +12,7 @@ module scalarRegFile #(
     logic [registerQuantity-1:0] reg_N_WrEn;
     logic [registerQuantity-1:0] [registerSize-1:0] reg_N_Out;
 
-    logic_decoder #(.in(selectionBits), .out(registerQuantity)) regWrDecoder(
+    logicDecoder #(.in(selectionBits), .out(registerQuantity)) regWrDecoder(
         .sel(regToWrite), .data_out(reg_N_WrEn)
     );
 

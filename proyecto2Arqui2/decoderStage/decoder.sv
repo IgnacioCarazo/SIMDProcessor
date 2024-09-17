@@ -1,9 +1,9 @@
-module decoder #(parameter N=24, parameter registerSize = 32)
+module decoder #(parameter N=24, parameter regSize = 16)
                  (input logic [N-1:0] instruction,  // Instrucción de N bits
                   output logic MemoryWrite,          // Control para escribir en memoria
                   output logic [1:0] WriteRegFrom,   // Indica de dónde provienen los datos que vamos a escribir en el registro
                   output logic [3:0] RegToWrite,     // Registro donde se escriben los datos
-                  output logic [registerSize - 1:0] Immediate, // Valor inmediato extraído de la instrucción
+                  output logic [regSize - 1:0] Immediate, // Valor inmediato extraído de la instrucción
                   output logic writeMemFrom,         // Control que indica si los datos a escribir en memoria provienen de la instrucción.
                   output logic RegWriteEnSc,         // Habilitación de escritura en registro escalar
                   output logic RegWriteEnVec,        // Habilitación de escritura en registro vectorial
@@ -13,9 +13,9 @@ module decoder #(parameter N=24, parameter registerSize = 32)
 );
 
     logic memoryInstruction, regWriteEn, preliminar_write_reg_from_1;
-    logic jump_instruction;
+    logic jumpInstruction;
 		
-    assign jump_instruction = instruction[N - 1] && ~instruction[N - 2]; //es true si los bits más significativos son 10
+    assign jumpInstruction = instruction[N - 1] && ~instruction[N - 2]; //es true si los bits más significativos son 10
     assign memoryInstruction = instruction[N - 1] && instruction[N -2]; //es true si los bits más significativos son 11
 
     // Outputs
@@ -34,7 +34,7 @@ module decoder #(parameter N=24, parameter registerSize = 32)
 
     assign preliminar_write_reg_from_1 = ~instruction[N - 1] & ~instruction[N - 2] & ~instruction[N - 3] & ~instruction[N - 4]; 
     assign WriteRegFrom[0] = preliminar_write_reg_from_1 ? 1'b0 : ~instruction[N - 1];
-    assign WriteRegFrom[1] = (jump_instruction) ? jump_instruction : preliminar_write_reg_from_1;
+    assign WriteRegFrom[1] = (jumpInstruction) ? jumpInstruction : preliminar_write_reg_from_1;
 
     assign OverWriteNz = ~instruction[N - 1] & (|instruction[N - 2:N - 4]);
 

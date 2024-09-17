@@ -1,35 +1,33 @@
 module writeback #(
     parameter vecSize = 4,
-    parameter registerSize = 16
+    parameter regSize = 16
 ) (
    input clk, reset, writeEnable, writeMemFrom,
    input [1:0] writeRegFrom,
-   input [registerSize-1:0] imm,
-   input [vecSize-1:0] [registerSize-1:0] aluResult, alu_operand2, alu_operand1,
-   input [9:0] vga_adr,
-   output [vecSize-1:0] [registerSize-1:0] writeBackData,
-   output logic [7:0] vga_pixel
+   input [regSize-1:0] imm,
+   input [vecSize-1:0] [regSize-1:0] aluResult, aluOperand2, aluOperand1,
+   output [vecSize-1:0] [regSize-1:0] writeBackData
 );
     
-    logic [vecSize-1:0] [registerSize-1:0] extended_imm, imm_delayed,
+    logic [vecSize-1:0] [regSize-1:0] extended_imm, imm_delayed,
         writeData_delayed, writeData, matrix_zero;
     logic [vecSize-1:0] [7:0] readData;
-    logic [registerSize-1:0] address;
+    logic [regSize-1:0] address;
 	logic [1:0] writeRegFrom_delayed;
 
-	  // TODO: Does this alu_operand2 has to be delayed as well?
-    assign address = writeMemFrom ? alu_operand2[0] : imm;
-	assign writeData = writeMemFrom ? alu_operand1 : aluResult;
+	  // TODO: Does this aluOperand2 has to be delayed as well?
+    assign address = writeMemFrom ? aluOperand2[0] : imm;
+	assign writeData = writeMemFrom ? aluOperand1 : aluResult;
 	 
 	 
-	pipe_vect #(2, registerSize, vecSize) p_mem_chip(clk, rst, writeRegFrom, writeData, extended_imm, matrix_zero,
+	pipe_vect #(2, regSize, vecSize) pMemory_chip(clk, rst, writeRegFrom, writeData, extended_imm, matrix_zero,
 													 writeRegFrom_delayed, writeData_delayed, imm_delayed, matrix_zero);
 
-    data_memory #(
+    dataMemoryory #(
         .dataSize(8),
-        .addressingSize(registerSize),
+        .addressingSize(regSize),
         .vecSize(vecSize)
-    ) data_mem (
+    ) dataMemory (
         .clk(clk),
         .write_enable(writeEnable), .DataAdr(address),
         .toWrite_data({
@@ -40,12 +38,12 @@ module writeback #(
     );
 
     vector_extender #(
-        .vectorSize(vecSize), .dataSize(registerSize)
+        .vecSize(vecSize), .dataSize(regSize)
     ) immExtender (
         .inData(imm), .outData(extended_imm)
     );
 	  
-	  logic [vecSize-1:0] [registerSize-1:0] writeBackDataTMP;
+	  logic [vecSize-1:0] [regSize-1:0] writeBackDataTMP;
 	 always_comb begin
 		case (writeRegFrom_delayed)
 			0:begin 
