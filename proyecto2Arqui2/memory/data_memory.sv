@@ -1,10 +1,10 @@
-module dataMemoryory #(
+module data_memory #(
     parameter dataSize = 32,
     parameter addressingSize = 32,
     parameter memorySize = 10020,
     parameter vecSize = 1
 ) (
-    input logic clk, write_enable,
+    input logic clk, writeEnable,
     input logic [addressingSize-1:0] DataAdr,
     input logic [vecSize-1:0] [dataSize-1:0] toWrite_data,
     output logic [vecSize-1:0] [dataSize-1:0] read_data
@@ -18,7 +18,7 @@ module dataMemoryory #(
   end
     
     always_ff @(posedge clk) begin
-        if (write_enable) begin 
+        if (writeEnable) begin 
             for (int i = 0; i < vecSize; i = i + 1) begin
                 for (int j = 0; j < bytesIn_addr; j = j + 1)
                     RAM[DataAdr[addressingSize-1:bits_to_address_bytesIn_addr] +
@@ -37,7 +37,7 @@ module dataMemoryory #(
     end
    
    always_ff @(negedge clk)begin
-     if (write_enable) begin 
+     if (writeEnable) begin 
       $writememb("RAM.txt",RAM);
      end
    end

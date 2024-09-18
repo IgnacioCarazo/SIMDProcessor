@@ -1,5 +1,5 @@
 // Each line represents 4 bytes of data
-// State Matrix where each line would be a column or row, depends on implementation.
+// State Matrix where each line would be a column
 00000000
 00000000
 00000000

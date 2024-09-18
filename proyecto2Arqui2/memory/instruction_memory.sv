@@ -1,4 +1,4 @@
-module instructionMemoryory(input logic [15:0] address, output logic [23:0] rdata);
+module instruction_memory(input logic [15:0] address, output logic [23:0] rdata);
 
     logic [23:0] ROM[255:0];
 
