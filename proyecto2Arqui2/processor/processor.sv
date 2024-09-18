@@ -23,8 +23,11 @@ module processor #(
 	 logic PCWrEnMem;
     logic [instSize-1:0] instructionFetch;
 	fetch fetch_stage(
-        .clk(clk), .reset(rst), .newPc(writeBackDataMem[0]),
-        .pcWrEn(PCWrEnMem), .instruction(instructionFetch)
+        .clk(clk), 
+        .reset(rst), 
+        .newPc(writeBackDataMem[0]),
+        .pcWrEn(PCWrEnMem), 
+        .instruction(instructionFetch)
 			);
 	
 	pipe #(instSize) p_fetchDecode(clk, rst, instructionFetch, instructionDecode);
@@ -40,25 +43,38 @@ module processor #(
     logic [2:0] AluOpCodeDecode;
 	 logic [vecSize-1:0] [regSize-1:0] operand1Decode, operand2Decode;
 
-	decoder #(instSize, regSize) decoder_stage
+	decoder #(
+        instSize, 
+        regSize) decoder_stage
 			(
-        .instruction(instructionDecode), .MemoryWrite(MemoryWriteDecode),
-        .WriteRegFrom(writeRegFromDecode), .RegToWrite(RegToWriteDecode),
-        .Immediate(ImmediateDecode), .RegWriteEnSc(regWriteEnScDecode),
-        .RegWriteEnVec(regWriteEnVecDecode), .PcWriteEn(pcWrEnDecode),
-        .OverWriteNz(OverWriteNzDecode), .AluOpCode(AluOpCodeDecode),
+        .instruction(instructionDecode), 
+        .MemoryWrite(MemoryWriteDecode),
+        .WriteRegFrom(writeRegFromDecode), 
+        .RegToWrite(RegToWriteDecode),
+        .Immediate(ImmediateDecode), 
+        .RegWriteEnSc(regWriteEnScDecode),
+        .RegWriteEnVec(regWriteEnVecDecode), 
+        .PcWriteEn(pcWrEnDecode),
+        .OverWriteNz(OverWriteNzDecode), 
+        .AluOpCode(AluOpCodeDecode),
         .writeMemFrom(writeMemFromDecode));
 
     
-    reg_file #(
-        .regSize(regSize), .regQuantity(regQuantity),
-        .selBits(selBits), .vecSize(vecSize)
-    ) registerFile(
-        .clk(clk), .reset(rst), .regWrEnScalar(regWriteEnScChip),
-        .regWrEnVector(regWriteEnVecChip), .rSel1(instructionDecode[instSize - 5: instSize - 8]),
-        .rSel2(instructionDecode[instSize - 9: instSize - 12]), .regToWrite(RegToWriteChip),
-        .dataIn(writeBackDataMem), .operand1(operand1Decode), .operand2(operand2Decode)
-    );
+     reg_file #(
+        .regSize(regSize),         // 128-bit registers
+        .regQuantity(regQuantity),      // 16 registers
+        .selBits(selBits)            // 4-bit selection for 16 registers
+            ) registerFile (
+        .clk(clk), 
+        .reset(rst), 
+        .reWrEn(regWriteEnScChip),        // Single scalar write enable signal
+        .rSel1(instructionDecode[instSize - 5: instSize - 8]), // rSel1 selects from bits 20-23
+        .rSel2(instructionDecode[instSize - 9: instSize - 12]), // rSel2 selects from bits 16-19
+        .regToWrite(RegToWriteChip),      // 4-bit register address to write to
+        .dataIn(writeBackDataMem),        // 128-bit data input to write
+        .operand1(operand1Decode),        // 128-bit output for operand1
+        .operand2(operand2Decode)         // 128-bit output for operand2
+        );
 	 
 	// Pipe between Decode and Execute
 	logic [regSize-1+17:0] condensedDecodeIn, condensedDecodeOut;
@@ -70,10 +86,20 @@ module processor #(
 	logic [vecSize-1:0] [regSize-1:0] operand1Execute, operand2Execute;
 
  	pipe_vect #(
-        regSize+17, regSize, vecSize
+        regSize+17, 
+        regSize,
+        vecSize
     ) pDecodeExecute(
-        clk, rst, condensedDecodeIn, operand1Decode, operand2Decode, matrix_zero,
-        condensedDecodeOut, operand1Execute, operand2Execute, matrix_zero
+        clk, 
+        rst, 
+        condensedDecodeIn,
+         operand1Decode, 
+         operand2Decode, 
+         matrix_zero,
+        condensedDecodeOut, 
+        operand1Execute, 
+        operand2Execute, 
+        matrix_zero
     );
 	
 	
@@ -91,12 +117,22 @@ module processor #(
             pcWrEnExecute, OverWriteNzExecute,
             AluOpCodeExecute, writeMemFromExecute} = condensedDecodeOut;
 	logic [vecSize-1:0] [regSize-1:0] resultExecute, aluResultMem;
-   logic pcWrEnExecuteOut;
-	execute #(.regSize(regSize),.vecSize(vecSize)) execute_stage
+    logic pcWrEnExecuteOut;
+
+	execute #(
+        .regSize(regSize),
+        .vecSize(vecSize)) 
+        execute_stage
 	(   
-        .clk(clk), .reset(rst), .overwriteFlags(OverWriteNzExecute),
-        .ExecuteOp(AluOpCodeExecute), .pcWrEn(pcWrEnExecute), .vect1(operand1Execute), 
-        .vect2(operand2Execute), .vectOut(resultExecute), .pcWrEnOut(pcWrEnExecuteOut)
+        .clk(clk), 
+        .reset(rst), 
+        .overwriteFlags(OverWriteNzExecute),
+        .ExecuteOp(AluOpCodeExecute), 
+        .pcWrEn(pcWrEnExecute), 
+        .vect1(operand1Execute), 
+        .vect2(operand2Execute), 
+        .vectOut(resultExecute), 
+        .pcWrEnOut(pcWrEnExecuteOut)
     );
 	
 	
@@ -107,8 +143,22 @@ module processor #(
 	 assign condensedMemoryIn =  {MemoryWriteExecute, ImmediateExecute, writeRegFromExecute,
                                  RegToWriteExecute, pcWrEnExecuteOut, regWriteEnScExecute, 
                                  regWriteEnVecExecute, writeMemFromExecute};
-	 pipe_vect #(regSize+11, regSize, vecSize) pExecuteMemory(clk, rst, condensedMemoryIn, resultExecute, operand2Execute, operand1Execute, 
-																						condensedMemoryOut, aluResultMem, operand2Memory, operand1Memory);
+
+	 pipe_vect #(
+        regSize+11, 
+        regSize, 
+        vecSize) pExecuteMemory
+        (
+            clk, 
+            rst, 
+            condensedMemoryIn, 
+            resultExecute, 
+            operand2Execute, 
+            operand1Execute, 
+            condensedMemoryOut, 
+            aluResultMem, 
+            operand2Memory, 
+            operand1Memory);
 						
 	
     // Writeback Stage
@@ -121,13 +171,22 @@ module processor #(
     assign {MemoryWriteMemory, ImmediateMemory, WriteRegFromMemory, RegToWriteMemory,
 			PCWrEnMem, regWriteEnScMemory, regWriteEnVecMemory,
             writeMemFromMemory} = condensedMemoryOut;
+
+
     writeback #(
-        .vecSize(vecSize), .regSize(regSize)
+        .vecSize(vecSize), 
+        .regSize(regSize)
     ) writeback_stage (
-        .clk(clk), .reset(rst), .writeEnable(MemoryWriteMemory), .aluOperand2(operand2Memory),
+        .clk(clk), 
+        .reset(rst), 
+        .writeEnable(MemoryWriteMemory), 
+        .aluOperand2(operand2Memory),
         .writeRegFrom(WriteRegFromMemory),
-        .imm(ImmediateMemory), .aluOperand1(operand1Memory), .writeMemFrom(writeMemFromMemory),
-        .aluResult(aluResultMem), .writeBackData(writeBackDataMem)
+        .imm(ImmediateMemory), 
+        .aluOperand1(operand1Memory), 
+        .writeMemFrom(writeMemFromMemory),
+        .aluResult(aluResultMem), 
+        .writeBackData(writeBackDataMem)
     );
 	 
 	 
@@ -135,8 +194,22 @@ module processor #(
 	 // Pipe between Memory-Writeback and Chip
 	 logic [5:0] condensedChipIn, condensedChipOut;
 	 assign condensedChipIn = {RegToWriteMemory, regWriteEnVecMemory, regWriteEnScMemory};
-	 pipe_vect #(6, regSize, vecSize) pMemory_chip(clk, rst, condensedChipIn, writeBackDataMem, matrix_zero_b, matrix_zero_c,
-																			condensedChipOut, writeBackDataChip, matrix_zero_b, matrix_zero_c);
+     
+	 pipe_vect #(
+        6, 
+        regSize, 
+        vecSize
+     ) pMemory_chip (
+        clk, 
+        rst, 
+        condensedChipIn, 
+        writeBackDataMem, 
+        matrix_zero_b, 
+        matrix_zero_c,
+		condensedChipOut, 
+        writeBackDataChip, 
+        matrix_zero_b, 
+        matrix_zero_c);
 
 	 assign {RegToWriteChip, regWriteEnVecChip, regWriteEnScChip} = condensedChipOut;
 

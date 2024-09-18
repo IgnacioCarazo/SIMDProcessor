@@ -23,13 +23,13 @@ module writeback #(
 	pipe_vect #(2, regSize, vecSize) pMemory_chip(clk, rst, writeRegFrom, writeData, extended_imm, matrix_zero,
 													 writeRegFrom_delayed, writeData_delayed, imm_delayed, matrix_zero);
 
-    dataMemoryory #(
+    data_memory #(
         .dataSize(8),
         .addressingSize(regSize),
         .vecSize(vecSize)
     ) dataMemory (
         .clk(clk),
-        .write_enable(writeEnable), .DataAdr(address),
+        .writeEnable(writeEnable), .DataAdr(address),
         .toWrite_data({
             writeData[3][7:0], writeData[2][7:0],
             writeData[1][7:0], writeData[0][7:0]

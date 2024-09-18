@@ -18,7 +18,7 @@ module fetch #(
 	register #(1) pcWr_delay(clk, reset, pcWrEn, pcWrEnDelayed);
 	
     assign chosenPc = pcWrEnDelayed ? newPc : pcM4; //Mux
-	instructionMemoryory rom(.address(chosenPc),.rdata(instruction)); //ROM
+	instruction_memory rom(.address(chosenPc),.rdata(instruction)); //ROM
 	assign pcM4 = pc + 4;						  //PC + 4	
 
 endmodule
