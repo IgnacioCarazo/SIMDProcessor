@@ -1,7 +1,7 @@
 module scalar_reg_file #(
-    parameter regSize=32, 
-    parameter regQuantity=4,
-    parameter selBits=2
+    parameter regSize=132, 
+    parameter regQuantity=16,
+    parameter selBits=4
 ) (
     input clk, reset,
     input regWrEn,
