@@ -1,7 +1,7 @@
 module processor #(
 	 parameter instSize = 24,
-    parameter regSize = 16,
-    parameter regQuantity = 4,
+    parameter regSize = 128,
+    parameter regQuantity = 16,
     parameter selBits = 4,
     parameter vecSize = 4
 ) (input clk, rst);

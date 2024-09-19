@@ -14,12 +14,9 @@ module key_expansion (
     logic [31:0] rcon_value;
     integer i;
 
-    // Instancia de memoria unificada
-    unified_memory mem_unificada (
-        .addr(addr),
-        .data_out(data_out)
-    );
 
+    // me parece que esto realmente no es un procedimiento vectorial, 
+    // muy software-thought*
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             // Reset: inicializar claves de ronda

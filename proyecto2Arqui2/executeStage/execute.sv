@@ -1,11 +1,13 @@
 module execute #(
-	parameter regSize = 16,
-	parameter vecSize = 1
+	parameter regSize = 32,
+	parameter vecSize = 4
 )
 (
 	input logic clk, reset, overwriteFlags,
     input logic [2:0] pcWrEn,
     input logic [2:0] ExecuteOp,
+    // input [regSize-1:0] scalar1, scalar2
+    // input [regSize-1:0] scalarOut
 	input logic [vecSize-1:0] [regSize-1:0] vect1, vect2,
 	output logic [vecSize-1:0] [regSize-1:0] vectOut,
     output logic pcWrEnOut

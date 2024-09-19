@@ -1,23 +1,16 @@
 module subbytes (
     input logic [127:0] state,          // 128-bit state matrix input
-    input logic [7:0] sbox_normal [255:0], // Predefined normal S-Box data (as an input array)
-    input logic [7:0] sbox_inverse [255:0], // Predefined inverse S-Box data (as an input array)
-    input logic use_inverse_sbox,       // Control signal: 0 for normal S-Box, 1 for inverse S-Box
+    input logic [7:0] sbox_data [255:0], // Predefined S-Box data (as an input array)
     output logic [127:0] new_state      // 128-bit new state matrix output
 );
     // Internal wires for byte extraction
     logic [7:0] state_bytes [15:0]; // Array to store extracted bytes
     logic [7:0] sbox_results [15:0]; // Array to store S-Box results
-    logic [7:0] sbox_data [255:0];   // S-Box data to use (selected based on control signal)
 
-    // Select S-Box data based on the control signal
-    always_comb begin
-        if (use_inverse_sbox) begin
-            sbox_data = sbox_inverse;
-        end else begin
-            sbox_data = sbox_normal;
-        end
-    end
+    // ******
+    // Esto esta mal porque yo lo estaba implementando a nivel de byte y no en indices como
+    // vimos ahora en la llamada, con x y y.
+    // ******
 
     // Extract bytes from state (parallel extraction)
     always_comb begin
@@ -41,6 +34,7 @@ module subbytes (
 
     // Perform S-Box substitution in parallel
     always_comb begin
+        // Each byte's S-Box lookup is done in parallel
         sbox_results[0] = sbox_data[state_bytes[0]];
         sbox_results[1] = sbox_data[state_bytes[1]];
         sbox_results[2] = sbox_data[state_bytes[2]];

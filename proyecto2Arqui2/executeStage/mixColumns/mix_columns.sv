@@ -3,8 +3,9 @@ module mix_columns(
     input logic inverseSelect,    // Control signal: 0 for mix_columns, 1 for Inverse mix_columns
     output logic [127:0] stateOut // 128-bit state matrix output
 );
+    // This operation works by columns (4 bytes) of the state matrix instead of bytes
 
-    // Encryption mix_columns matrix
+    // Encryption mix_columns matrix lookup
     logic [7:0] mixMatrixEncrypt [0:3][0:3] = '{ 
         '{8'h02, 8'h03, 8'h01, 8'h01}, 
         '{8'h01, 8'h02, 8'h03, 8'h01}, 
@@ -12,7 +13,8 @@ module mix_columns(
         '{8'h03, 8'h01, 8'h01, 8'h02} 
     };
 
-    // Decryption Inverse mix_columns matrix
+    // Decryption Inverse mix_columns matrix lookup
+    
     logic [7:0] mixMatrixDecrypt [0:3][0:3] = '{ 
         '{8'h0E, 8'h0B, 8'h0D, 8'h09}, 
         '{8'h09, 8'h0E, 8'h0B, 8'h0D}, 

@@ -11,12 +11,12 @@ module alu #(
         xor_res, inc_res;
     
     assign sum_res = operand1 + operand2;
-    assign sub_res = operand1 - operand2; //todo no he visto que se realicen restas en el algoritmo
+    assign sub_res = operand1 - operand2; 
     assign mult_res = operand1 * operand2;
 	 assign rshift_res = (operand1 >> (operand2 % 8)) | (operand1 << (8 - (operand2 % 8)));
     assign lshift_res = (operand1 << (operand2 % 8)) | (operand1 >> (8 - (operand2 % 8)));
     assign xor_res = operand1 ^ operand2;
-    assign inc_res = operand1 + 4; //todo puede funcionar para moverse a traves de la llave pero puede existir una mejor instruccion
+    assign inc_res = operand1 + 4; 
 
     assign result = operation_select == 3'b001 ? xor_res :
                     operation_select == 3'b010 ? sum_res :
