@@ -3,7 +3,7 @@ module scalar_reg_file #(
     parameter regQuantity=4,
     parameter selBits=2
 ) (
-    input clk, reset,
+    input clk, rst,
     input regWrEn,
     input [selBits-1:0] rSel1, rSel2, regToWrite,
     input [regSize-1:0] dataIn,
@@ -20,7 +20,7 @@ module scalar_reg_file #(
         genvar i;
         for (i = 0; i < regQuantity; i = i + 1) begin: REGISTER_BLOCK
             register_en #(regSize) r (
-                .clk(clk), .reset(reset), .enable(reg_N_WrEn[i] & regWrEn),
+                .clk(clk), .rst(rst), .enable(reg_N_WrEn[i] & regWrEn),
                 .dataIn(dataIn), .dataOut(reg_NOut[i])
             );
         end

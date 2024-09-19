@@ -1,0 +1,53 @@
+module data_memory_test #(parameter dataSize = 32,
+    parameter addressingSize = 32,
+    parameter memorySize = 10020,
+    parameter vecSize = 1
+)();
+	 
+    logic clk, write_enable;
+    logic [addressingSize-1:0] DataAdr;
+    logic [vecSize-1:0] [dataSize-1:0] toWrite_data;
+    logic [vecSize-1:0] [dataSize-1:0] read_data;
+	 
+	 data_memory #(
+		 dataSize,addressingSize,memorySize,vecSize
+	) dut (
+		 .clk(clk), .write_enable(write_enable), .DataAdr(write_enable),
+		 .toWrite_data(toWrite_data), .read_data(read_data)
+	);
+
+    // Clock generation
+    always #5 clk = ~clk;
+
+    initial begin
+        // Initialize simulation
+        $display("Starting data_mem_testbench simulation...");
+         
+		  // Simple write to address 100
+			write_enable = 0;
+			DataAdr = 32'd100;
+			toWrite_data = 32'hDEADBEEF;  // Writing 32-bit value
+			#10;  // Wait for one clock cycle
+
+			// Now disable writing and read back the data
+			write_enable = 0;
+			#10;
+			$display("Read data: %h", read_data);
+			
+			// Simple write to address 100
+			write_enable = 1;
+			DataAdr = 32'd100;
+			toWrite_data = 32'hDEADBEEF;  // Writing 32-bit value
+			#10;  // Wait for one clock cycle
+
+			// Now disable writing and read back the data
+			write_enable = 0;
+			#10;
+			$display("Read data: %h", read_data);
+
+
+        // Finish simulation
+        $display("Ending imem_tb simulation.");
+        $finish;
+    end
+endmodule

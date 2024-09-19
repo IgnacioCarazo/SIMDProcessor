@@ -4,7 +4,7 @@ module reg_file #(
     parameter selBits = 2, 
     parameter vecSize = 1)
 (
-    input clk, reset,
+    input clk, rst,
     input regWrEnScalar, regWrEnVector, // Enable signals for writing to scalar and vector registers.
     input [selBits-1:0] rSel1, rSel2, // Register selection signal for reading.
     input [selBits-1:0] regToWrite, // Register where the new data will be written.
@@ -18,7 +18,7 @@ module reg_file #(
     logic [vecSize-1:0] [regSize-1:0] vectorized_scalar_reg1Out, vectorized_scalar_reg2Out;
 
     scalar_reg_file #(regSize, 16, selBits) scalarRegisters(
-        .clk(clk), .reset(reset),
+        .clk(clk), .rst(rst),
         .regWrEn(regWrEnScalar), .rSel1(rSel1), .rSel2(rSel2),
         .regToWrite(regToWrite), .dataIn(dataIn[0]),
         .reg1Out(scalar_reg1Out), .reg2Out(scalar_reg2Out)
@@ -34,7 +34,7 @@ module reg_file #(
     vector_reg_file #(
         regSize, regQuantity, selBits-1, vecSize
     ) vectorialRegisters(
-        .clk(clk), .reset(reset),
+        .clk(clk), .rst(rst),
         .regWrEn(regWrEnVector), .rSel1(rSel1), .rSel2(rSel2), 
         .regToWrite(regToWrite), .regWriteData(dataIn),
         .reg1Out(vector_reg1Out), .reg2Out(vector_reg2Out)

@@ -23,7 +23,7 @@ module processor #(
 	 logic PCWrEnMem;
     logic [instSize-1:0] instructionFetch;
 	fetch fetch_stage(
-        .clk(clk), .reset(rst), .newPc(writeBackDataMem[0]),
+        .clk(clk), .rst(rst), .newPc(writeBackDataMem[0]),
         .pcWrEn(PCWrEnMem), .instruction(instructionFetch)
 			);
 	
@@ -54,7 +54,7 @@ module processor #(
         .regSize(regSize), .regQuantity(regQuantity),
         .selBits(selBits), .vecSize(vecSize)
     ) registerFile(
-        .clk(clk), .reset(rst), .regWrEnScalar(regWriteEnScChip),
+        .clk(clk), .rst(rst), .regWrEnScalar(regWriteEnScChip),
         .regWrEnVector(regWriteEnVecChip), .rSel1(instructionDecode[instSize - 5: instSize - 8]),
         .rSel2(instructionDecode[instSize - 9: instSize - 12]), .regToWrite(RegToWriteChip),
         .dataIn(writeBackDataMem), .operand1(operand1Decode), .operand2(operand2Decode)
@@ -94,7 +94,7 @@ module processor #(
    logic pcWrEnExecuteOut;
 	execute #(.regSize(regSize),.vecSize(vecSize)) execute_stage
 	(   
-        .clk(clk), .reset(rst), .overwriteFlags(OverWriteNzExecute),
+        .clk(clk), .rst(rst), .overwriteFlags(OverWriteNzExecute),
         .ExecuteOp(AluOpCodeExecute), .pcWrEn(pcWrEnExecute), .vect1(operand1Execute), 
         .vect2(operand2Execute), .vectOut(resultExecute), .pcWrEnOut(pcWrEnExecuteOut)
     );
@@ -124,7 +124,7 @@ module processor #(
     writeback #(
         .vecSize(vecSize), .regSize(regSize)
     ) writeback_stage (
-        .clk(clk), .reset(rst), .writeEnable(MemoryWriteMemory), .aluOperand2(operand2Memory),
+        .clk(clk), .rst(rst), .writeEnable(MemoryWriteMemory), .aluOperand2(operand2Memory),
         .writeRegFrom(WriteRegFromMemory),
         .imm(ImmediateMemory), .aluOperand1(operand1Memory), .writeMemFrom(writeMemFromMemory),
         .aluResult(aluResultMem), .writeBackData(writeBackDataMem)

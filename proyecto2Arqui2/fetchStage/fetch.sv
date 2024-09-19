@@ -1,7 +1,7 @@
 module fetch #(
 	 parameter instSize = 24)
 	 (
-    input logic clk, input logic reset, input logic pcWrEn,
+    input logic clk, input logic rst, input logic pcWrEn,
     input logic [instSize + 7:0] newPc,
     output logic [instSize - 1:0] instruction
 	);
@@ -10,12 +10,12 @@ module fetch #(
 
     register pcReg(		//PC register
         .clk(clk),
-        .reset(reset),
+        .rst(rst),
         .dataIn(chosenPc),
         .dataOut(pc) );
 
 	logic pcWrEnDelayed;
-	register #(1) pcWr_delay(clk, reset, pcWrEn, pcWrEnDelayed);
+	register #(1) pcWr_delay(clk, rst, pcWrEn, pcWrEnDelayed);
 	
     assign chosenPc = pcWrEnDelayed ? newPc : pcM4; //Mux
 	instructionMemoryory rom(.address(chosenPc),.rdata(instruction)); //ROM

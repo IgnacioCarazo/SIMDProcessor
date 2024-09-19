@@ -1,4 +1,4 @@
-module dataMemoryory #(
+module data_memory #(
     parameter dataSize = 32,
     parameter addressingSize = 32,
     parameter memorySize = 10020,
@@ -13,8 +13,9 @@ module dataMemoryory #(
     parameter bits_to_address_bytesIn_addr = $clog2(bytesIn_addr);
 
     logic [7:0] RAM [memorySize-1:0];
+	 
   initial begin
-   // $readmemb("RAM.txt", RAM);
+		$readmemb("RAM.txt", RAM);
   end
     
     always_ff @(posedge clk) begin

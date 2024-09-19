@@ -3,7 +3,7 @@ module execute #(
 	parameter vecSize = 1
 )
 (
-	input logic clk, reset, overwriteFlags,
+	input logic clk, rst, overwriteFlags,
     input logic [2:0] pcWrEn,
     input logic [2:0] ExecuteOp,
 	input logic [vecSize-1:0] [regSize-1:0] vect1, vect2,
@@ -28,12 +28,12 @@ module execute #(
     endgenerate
     
     register #(1) negative_flag_register (
-        .clk(clk & overwriteFlags), .reset(reset),
+        .clk(clk & overwriteFlags), .rst(rst),
         .dataIn(|negativeFlags), .dataOut(NZ_flags[0])
     );
 
     register #(1) zeroFlag_register (
-        .clk(clk & overwriteFlags), .reset(reset),
+        .clk(clk & overwriteFlags), .rst(rst),
         .dataIn(&zeroFlags), .dataOut(NZ_flags[1])
     );
 

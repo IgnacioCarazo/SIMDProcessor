@@ -1,4 +1,4 @@
-// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Copyright (C) 2022  Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions 
 // and other software and tools, and any partner logic 
 // functions, and any output files from any of the foregoing 
@@ -15,9 +15,9 @@
 
 // VENDOR "Altera"
 // PROGRAM "Quartus Prime"
-// VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
+// VERSION "Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition"
 
-// DATE "09/16/2024 18:07:10"
+// DATE "09/16/2024 19:03:53"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -32,8 +32,8 @@
 module top (
 	clk,
 	rst);
-input 	clk;
-input 	rst;
+input 	reg clk ;
+input 	reg rst ;
 
 // Design Ports Information
 // clk	=>  Location: PIN_AD20,	 I/O Standard: 2.5 V,	 Current Strength: Default

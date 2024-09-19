@@ -1,6 +1,6 @@
 EDA Netlist Writer report for proyecto2Arqui2
-Mon Sep 16 18:07:10 2024
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Mon Sep 16 19:03:54 2024
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
 ---------------------
@@ -17,7 +17,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Sep 16 18:07:10 2024 ;
+; EDA Netlist Writer Status ; Successful - Mon Sep 16 19:03:54 2024 ;
 ; Revision Name             ; proyecto2Arqui2                       ;
 ; Top-level Entity Name     ; top                                   ;
 ; Family                    ; Cyclone V                             ;
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+--------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                  ;
-+---------------------------------------------------------------------------------------------+
-; Generated Files                                                                             ;
-+---------------------------------------------------------------------------------------------+
-; C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/simulation/modelsim/proyecto2Arqui2.svo ;
-+---------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                             ;
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                        ;
++----------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/simulation/modelsim/proyecto2Arqui2.svo ;
++----------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -80,15 +80,15 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Sep 16 18:07:09 2024
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Mon Sep 16 19:03:53 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off proyecto2Arqui2 -c proyecto2Arqui2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file proyecto2Arqui2.svo in folder "C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file proyecto2Arqui2.svo in folder "C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4723 megabytes
-    Info: Processing ended: Mon Sep 16 18:07:10 2024
+    Info: Peak virtual memory: 4730 megabytes
+    Info: Processing ended: Mon Sep 16 19:03:54 2024
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

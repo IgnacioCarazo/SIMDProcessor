@@ -4,7 +4,7 @@ module vector_reg_file #(
     parameter selBits = 2,
     parameter vecSize = 4
 ) (
-    input clk, reset,
+    input clk, rst,
     input regWrEn,
     input [selBits-1:0] rSel1, rSel2, regToWrite,
     input [vecSize-1:0] [regSize-1:0] regWriteData,
@@ -24,7 +24,7 @@ module vector_reg_file #(
         for (j = 0; j < vecSize; j = j + 1) begin: VECTOR_BLOCK
             for (i = 0; i < regQuantity; i = i + 1) begin: REGISTER_BLOCK
                 register #(regSize) r (
-                    .clk(clk & reg_N_WrEn[i] & regWrEn), .reset(reset),
+                    .clk(clk & reg_N_WrEn[i] & regWrEn), .rst(rst),
                     .dataIn(regWriteData[j]), .dataOut(reg_NOut[i][j])
                 );
             end

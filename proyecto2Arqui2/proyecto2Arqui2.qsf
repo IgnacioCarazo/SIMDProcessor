@@ -39,10 +39,10 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name TOP_LEVEL_ENTITY data_memory_test
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "07:31:57  SEPTEMBER 15, 2024"
-set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name BOARD "DE1-SoC Board"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (SystemVerilog)"
@@ -56,9 +56,6 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE writebackStage/writeback.sv
 set_global_assignment -name SYSTEMVERILOG_FILE processor/top.sv
 set_global_assignment -name SYSTEMVERILOG_FILE processor/processor.sv
@@ -77,4 +74,32 @@ set_global_assignment -name SYSTEMVERILOG_FILE common/register.sv
 set_global_assignment -name SYSTEMVERILOG_FILE common/pipe_vect.sv
 set_global_assignment -name SYSTEMVERILOG_FILE common/pipe.sv
 set_global_assignment -name SYSTEMVERILOG_FILE common/logic_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/vecRegFile_test.sv
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH data_memory_test -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME vecRegFile_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id vecRegFile_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME vecRegFile_test -section_id vecRegFile_test
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/top_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/processor_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/stage_writeback_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/stage_execute_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/scalarRegFile_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/regFile_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/stage_fetch_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/stage_decoder_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/alu_test.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME stage_writeback_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id stage_writeback_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME stage_writeback_test -section_id stage_writeback_test
+set_global_assignment -name SYSTEMVERILOG_FILE testbenches/data_memory_test.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME data_memory_test -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id data_memory_test
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME data_memory_test -section_id data_memory_test
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/vecRegFile_test.sv -section_id vecRegFile_test
+set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/stage_writeback_test.sv -section_id stage_writeback_test
+set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/data_memory_test.sv -section_id data_memory_test
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

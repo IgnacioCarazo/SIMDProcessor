@@ -4,7 +4,7 @@ module register_en #
 )
 (
     input clk,
-    input reset,
+    input rst,
    input enable,
     input [N-1:0] dataIn,
     output [N-1:0] dataOut
@@ -12,9 +12,9 @@ module register_en #
 
     reg [N-1:0] my_register; // declare a N-bit register
 
-    always @(negedge clk or posedge reset) begin
-        if (reset) begin
-            my_register <= 0; // reset the register to 0
+    always @(negedge clk or posedge rst) begin
+        if (rst) begin
+            my_register <= 0; // rst the register to 0
         end
         else begin
         if (enable)  my_register <= dataIn; // update the register with input data

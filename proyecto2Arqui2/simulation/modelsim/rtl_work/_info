@@ -1,0 +1,63 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/simulation/modelsim
+vdata_memory
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1726751271
+!i10b 1
+!s100 <ge32_?0hLcan5a91iYeT2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IQz4f1W33lT3D;aMogiO281
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1726749392
+8C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/memory/data_memory.sv
+FC:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/memory/data_memory.sv
+!i122 1
+L0 1 45
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1726751271.000000
+!s107 C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/memory/data_memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/memory|C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/memory/data_memory.sv|
+!i113 1
+Z7 o-sv -work work
+!s92 -sv -work work +incdir+C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/memory
+Z8 tCvgOpt 0
+vdata_memory_test
+R1
+R2
+!i10b 1
+!s100 :nc@P0zQCUL>YIVcM:8lc2
+R3
+IoBQ9U5K>:3W10L@;oVk4i1
+R4
+S1
+R0
+w1726751216
+8C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/testbenches/data_memory_test.sv
+FC:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/testbenches/data_memory_test.sv
+!i122 2
+L0 1 55
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/testbenches/data_memory_test.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/testbenches|C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/testbenches/data_memory_test.sv|
+!i113 1
+R7
+!s92 -sv -work work +incdir+C:/Users/FabianCrawford/Documents/proyectoArquiII/FabianCrawford/SIMDProcessor/proyecto2Arqui2/testbenches
+R8

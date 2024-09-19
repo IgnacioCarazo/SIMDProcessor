@@ -2,7 +2,7 @@ module writeback #(
     parameter vecSize = 4,
     parameter regSize = 16
 ) (
-   input clk, reset, writeEnable, writeMemFrom,
+   input clk, rst, writeEnable, writeMemFrom,
    input [1:0] writeRegFrom,
    input [regSize-1:0] imm,
    input [vecSize-1:0] [regSize-1:0] aluResult, aluOperand2, aluOperand1,
@@ -23,7 +23,7 @@ module writeback #(
 	pipe_vect #(2, regSize, vecSize) pMemory_chip(clk, rst, writeRegFrom, writeData, extended_imm, matrix_zero,
 													 writeRegFrom_delayed, writeData_delayed, imm_delayed, matrix_zero);
 
-    dataMemoryory #(
+    data_memory #(
         .dataSize(8),
         .addressingSize(regSize),
         .vecSize(vecSize)
