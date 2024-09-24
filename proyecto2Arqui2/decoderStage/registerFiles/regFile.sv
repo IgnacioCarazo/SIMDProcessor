@@ -17,7 +17,7 @@ module regFile #(
     logic [vecSize-1:0] [registerSize-1:0] vector_reg1Out, vector_reg2Out; 
     logic [vecSize-1:0] [registerSize-1:0] vectorized_scalar_reg1Out, vectorized_scalar_reg2Out;
 
-    scalarRegisterFile #(registerSize, 16, selectionBits) scalarRegisters(
+    scalar_reg_file #(registerSize, 16, selectionBits) scalarRegisters(
         .clk(clk), .reset(reset),
         .regWrEn(regWrEnSc), .rSel1(rSel1), .rSel2(rSel2),
         .regToWrite(regToWrite), .dataIn(dataIn[0]),
@@ -32,7 +32,7 @@ module regFile #(
     );
 
     
-    vecRegisterFile #(
+    vector_reg_file #(
         registerSize, registerQuantity, selectionBits-1, vecSize
     ) vectorialRegisters(
         .clk(clk), .reset(reset),
