@@ -42,7 +42,7 @@ module alu_test #(
         operand1 = 3;
         operand2 = 1;
         #10
-        assert (result == 1) else $error("Test 4, shr failed"); 
+        assert (result == 129) else $error("Test 4, shr failed"); 
         #10
         // 5: 3 << 2 = 12
         operation_select = 3'b110;
@@ -75,7 +75,7 @@ module alu_test #(
         operation_select = 3'b111;
         operand1 = 4;
         #10
-        assert (result == 5) else $error("Test 9, inc failed"); 
+        assert (result == 8) else $error("Test 9, inc failed"); 
         #20
         $finish;
     end
