@@ -1,6 +1,6 @@
 module execute #(
-	parameter regSize = 32,
-	parameter vecSize = 4
+	parameter regSize = 8,
+	parameter vecSize = 16
 )
 (
 	input logic clk, reset, overwriteFlags,

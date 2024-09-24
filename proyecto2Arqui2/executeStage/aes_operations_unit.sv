@@ -6,13 +6,9 @@ module aes_operations_unit (
     input logic [127:0] roundKey,  // 128-bit round key (for key expansion)
     output logic [127:0] state_out // 128-bit output state matrix
 );
-    // Internal wires for intermediate results
-    logic [127:0] subBytesResult;
-    logic [127:0] shiftRowsResult;
-    logic [127:0] mixColumnsResult;
-    logic [127:0] addRoundKeyResult;
-    logic [127:0] state_temp;
+    logic [31:0] row0, row1, row2, row3; // Define four 32-bit variables for rows
 
+    
     // Round keys for 10 rounds
     logic [127:0] round_keys [0:10];
 
