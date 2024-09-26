@@ -1,5 +1,5 @@
 Analysis & Elaboration report for proyecto2Arqui2
-Wed Sep 25 19:11:06 2024
+Wed Sep 25 20:08:05 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -9,12 +9,9 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |tb_key_expansion
-  5. Parameter Settings for User Entity Instance: key_expansion:uut
-  6. Parameter Settings for User Entity Instance: key_expansion:uut|sub_word:sub_word_inst
-  7. Analysis & Elaboration Settings
-  8. Port Connectivity Checks: "key_expansion:uut"
-  9. Analysis & Elaboration Messages
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |shift_rows
+  5. Analysis & Elaboration Settings
+  6. Analysis & Elaboration Messages
 
 
 
@@ -41,10 +38,10 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed Sep 25 19:11:06 2024       ;
+; Analysis & Elaboration Status ; Successful - Wed Sep 25 20:08:05 2024       ;
 ; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                 ; proyecto2Arqui2                             ;
-; Top-level Entity Name         ; tb_key_expansion                            ;
+; Top-level Entity Name         ; shift_rows                                  ;
 ; Family                        ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
 ; Total registers               ; N/A until Partition Merge                   ;
@@ -72,35 +69,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |tb_key_expansion ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; regSize        ; 32    ; Signed Integer                                          ;
-; vecSize        ; 4     ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: key_expansion:uut ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; regSize        ; 32    ; Signed Integer                        ;
-; vecSize        ; 4     ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: key_expansion:uut|sub_word:sub_word_inst ;
-+----------------+-------+--------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                         ;
-+----------------+-------+--------------------------------------------------------------+
-; regSize        ; 32    ; Signed Integer                                               ;
-+----------------+-------+--------------------------------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |shift_rows ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; regSize        ; 32    ; Signed Integer                                    ;
+; vecSize        ; 4     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -110,7 +86,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; tb_key_expansion   ; proyecto2Arqui2    ;
+; Top-level entity name                                                           ; shift_rows         ; proyecto2Arqui2    ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -191,33 +167,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "key_expansion:uut"                                                                                                                                  ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port        ; Type   ; Severity ; Details                                                                                                                                      ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; current_key ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; next_key    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; round       ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Sep 25 19:10:57 2024
+    Info: Processing started: Wed Sep 25 20:07:56 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off proyecto2Arqui2 -c proyecto2Arqui2 --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file executestage/mixcolumns/mix_columns.sv
     Info (12023): Found entity 1: mix_columns File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file executestage/vectorized_xor.sv
-    Info (12023): Found entity 1: vectorized_xor File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/vectorized_xor.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file executestage/matrix_transpose.sv
-    Info (12023): Found entity 1: matrix_transpose File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/matrix_transpose.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file writebackstage/writeback.sv
     Info (12023): Found entity 1: writeback File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/writebackStage/writeback.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file processor/top.sv
@@ -270,8 +231,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file testben
     Info (12023): Found entity 1: tb_sub_bytes File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_sub_bytes.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbenches/tb_shift_rows.sv
     Info (12023): Found entity 1: tb_shift_rows File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_shift_rows.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file testbenches/tb_matrix_transpose.sv
-    Info (12023): Found entity 1: tb_matrix_transpose File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_matrix_transpose.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbenches/tb_mix_columns.sv
     Info (12023): Found entity 1: tb_mix_columns File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_mix_columns.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbenches/tb_key_expansion.sv
@@ -288,26 +247,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file common/
     Info (12023): Found entity 1: s_box File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbenches/tb_sub_word.sv
     Info (12023): Found entity 1: tb_sub_word File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_sub_word.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file executestage/mixcolumns/mix_column.sv
+    Info (12023): Found entity 1: mix_column File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_column.sv Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at writeback.sv(23): created implicit net for "rst" File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/writebackStage/writeback.sv Line: 23
 Warning (10222): Verilog HDL Parameter Declaration warning at data_memory.sv(12): Parameter Declaration in module "data_memory" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/memory/data_memory.sv Line: 12
 Warning (10222): Verilog HDL Parameter Declaration warning at data_memory.sv(13): Parameter Declaration in module "data_memory" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/memory/data_memory.sv Line: 13
-Info (12127): Elaborating entity "tb_key_expansion" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at tb_key_expansion.sv(7): object "round" assigned a value but never read File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 7
-Warning (10175): Verilog HDL warning at tb_key_expansion.sv(36): ignoring unsupported system task File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 36
-Info (12128): Elaborating entity "key_expansion" for hierarchy "key_expansion:uut" File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 14
-Warning (10030): Net "rcon.data_a" at key_expansion.sv(11) has no driver or initial value, using a default initial value '0' File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv Line: 11
-Warning (10030): Net "rcon.waddr_a" at key_expansion.sv(11) has no driver or initial value, using a default initial value '0' File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv Line: 11
-Warning (10030): Net "rcon.we_a" at key_expansion.sv(11) has no driver or initial value, using a default initial value '0' File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv Line: 11
-Info (12128): Elaborating entity "sub_word" for hierarchy "key_expansion:uut|sub_word:sub_word_inst" File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv Line: 29
-Info (12128): Elaborating entity "s_box" for hierarchy "key_expansion:uut|sub_word:sub_word_inst|s_box:sbox_inst0" File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv Line: 13
-Warning (10030): Net "sbox_data.data_a" at s_box.sv(6) has no driver or initial value, using a default initial value '0' File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv Line: 6
-Warning (10030): Net "sbox_data.waddr_a" at s_box.sv(6) has no driver or initial value, using a default initial value '0' File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv Line: 6
-Warning (10030): Net "sbox_data.we_a" at s_box.sv(6) has no driver or initial value, using a default initial value '0' File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv Line: 6
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 4772 megabytes
-    Info: Processing ended: Wed Sep 25 19:11:06 2024
+Info (12127): Elaborating entity "shift_rows" for the top level hierarchy
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4769 megabytes
+    Info: Processing ended: Wed Sep 25 20:08:05 2024
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
 
 

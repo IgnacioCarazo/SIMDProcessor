@@ -10,70 +10,56 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv}
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:11:14 on Sep 25,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv 
-# -- Compiling module key_expansion
-# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv(5): (vlog-13314) Defaulting port 'current_key' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# Start time: 20:06:08 on Sep 25,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv 
+# -- Compiling module mix_columns
+# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv(5): (vlog-13314) Defaulting port 'vect' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
-# 	key_expansion
-# End time: 19:11:14 on Sep 25,2024, Elapsed time: 0:00:00
+# 	mix_columns
+# End time: 20:06:08 on Sep 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv}
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_mix_columns.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:11:14 on Sep 25,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv 
-# -- Compiling module tb_key_expansion
+# Start time: 20:06:09 on Sep 25,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_mix_columns.sv 
+# -- Compiling module tb_mix_columns
 # 
 # Top level modules:
-# 	tb_key_expansion
-# End time: 19:11:14 on Sep 25,2024, Elapsed time: 0:00:00
+# 	tb_mix_columns
+# End time: 20:06:09 on Sep 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv}
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_column.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:11:14 on Sep 25,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv 
-# -- Compiling module sub_word
+# Start time: 20:06:09 on Sep 25,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_column.sv 
+# -- Compiling module mix_column
 # 
 # Top level modules:
-# 	sub_word
-# End time: 19:11:14 on Sep 25,2024, Elapsed time: 0:00:00
+# 	mix_column
+# End time: 20:06:09 on Sep 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv}
+# 
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_mix_columns.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:11:14 on Sep 25,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv 
-# -- Compiling module s_box
+# Start time: 20:06:09 on Sep 25,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_mix_columns.sv 
+# -- Compiling module tb_mix_columns
 # 
 # Top level modules:
-# 	s_box
-# End time: 19:11:15 on Sep 25,2024, Elapsed time: 0:00:01
+# 	tb_mix_columns
+# End time: 20:06:09 on Sep 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:11:15 on Sep 25,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv 
-# -- Compiling module tb_key_expansion
-# 
-# Top level modules:
-# 	tb_key_expansion
-# End time: 19:11:15 on Sep 25,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_key_expansion
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_key_expansion 
-# Start time: 19:11:15 on Sep 25,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_mix_columns
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_mix_columns 
+# Start time: 20:06:09 on Sep 25,2024
 # Loading sv_std.std
-# Loading work.tb_key_expansion
-# Loading work.key_expansion
-# Loading work.sub_word
-# Loading work.s_box
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 3, found 2.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_key_expansion/uut File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 11
-# ** Warning: (vsim-3722) C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv(11): [TFMPC] - Missing connection for port 'round'.
+# Loading work.tb_mix_columns
+# Loading work.mix_columns
+# Loading work.mix_column
 # 
 # add wave *
 # view structure
@@ -81,17 +67,19 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# ** Error: Test Case 1 Failed:          x
-#    Time: 10 ps  Scope: tb_key_expansion File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 30
-# ** Error: Test Case 1 Failed:          x
-#    Time: 10 ps  Scope: tb_key_expansion File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 31
-# ** Error: Test Case 1 Failed:          x
-#    Time: 10 ps  Scope: tb_key_expansion File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 32
-# ** Error: Test Case 1 Failed:          x
-#    Time: 10 ps  Scope: tb_key_expansion File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 33
-# ** Note: $finish    : C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv(36)
-#    Time: 10 ps  Iteration: 0  Instance: /tb_key_expansion
+# Test case 1: Input state matrix columns:
+# vect[0] = 637bc0d2
+# vect[1] = 7b76d27c
+# vect[2] = 76757cc5
+# vect[3] = 7563c5c0
+# Test case 1: Output after MixColumns transformation:
+# new_vect[0] = 591ceea1
+# new_vect[1] = c28636d1
+# new_vect[2] = caddaf02
+# new_vect[3] = 4a27dca2
+# ** Note: $finish    : C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_mix_columns.sv(53)
+#    Time: 10 ps  Iteration: 0  Instance: /tb_mix_columns
 # 1
-# Break in Module tb_key_expansion at C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv line 36
-# End time: 19:11:46 on Sep 25,2024, Elapsed time: 0:00:31
-# Errors: 4, Warnings: 2
+# Break in Module tb_mix_columns at C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_mix_columns.sv line 53
+# End time: 20:06:30 on Sep 25,2024, Elapsed time: 0:00:21
+# Errors: 0, Warnings: 0
