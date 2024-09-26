@@ -1,0 +1,57 @@
+module tb_sub_bytes;
+
+    // Parameters
+    localparam regSize = 32; // Size of each register (32 bits)
+    localparam vecSize = 4;  // Size of the vector (number of registers)
+
+    // Signals
+    logic [vecSize-1:0][regSize-1:0] state;     // Input state
+    logic [vecSize-1:0][regSize-1:0] new_state; // Output new state
+
+    // Instantiate the sub_bytes module
+    sub_bytes #(
+        .regSize(regSize),
+        .vecSize(vecSize)
+    ) uut (
+        .state(state),
+        .new_state(new_state)
+    );
+
+    // Test procedure
+    initial begin
+        // Test Case 1: Example state input
+        state[0] = 32'h00000000; // All zeros
+        state[1] = 32'hFFFFFFFF; // All ones
+        state[2] = 32'h12345678; // Example data
+        state[3] = 32'h9ABCDEF0; // Example data
+
+        // Wait for the outputs to be updated
+        #10;
+
+        // Display the results
+        $display("Test Case 1:");
+        for (int i = 0; i < vecSize; i++) begin
+            $display("Input State[%0d]: %h, New State[%0d]: %h", i, state[i], new_state[i]);
+        end
+
+        // Add more test cases as needed
+        // Test Case 2
+        state[0] = 32'hAABBCCDD;
+        state[1] = 32'hFFEEDDCC;
+        state[2] = 32'h11223344;
+        state[3] = 32'h55667788;
+
+        // Wait for the outputs to be updated
+        #10;
+
+        // Display the results for Test Case 2
+        $display("Test Case 2:");
+        for (int i = 0; i < vecSize; i++) begin
+            $display("Input State[%0d]: %h, New State[%0d]: %h", i, state[i], new_state[i]);
+        end
+
+        // End simulation
+        $finish;
+    end
+
+endmodule

@@ -1,0 +1,97 @@
+# Reading pref.tcl
+# do proyecto2Arqui2_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:14 on Sep 25,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv 
+# -- Compiling module key_expansion
+# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv(5): (vlog-13314) Defaulting port 'current_key' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	key_expansion
+# End time: 19:11:14 on Sep 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:14 on Sep 25,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv 
+# -- Compiling module tb_key_expansion
+# 
+# Top level modules:
+# 	tb_key_expansion
+# End time: 19:11:14 on Sep 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:14 on Sep 25,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv 
+# -- Compiling module sub_word
+# 
+# Top level modules:
+# 	sub_word
+# End time: 19:11:14 on Sep 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:14 on Sep 25,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv 
+# -- Compiling module s_box
+# 
+# Top level modules:
+# 	s_box
+# End time: 19:11:15 on Sep 25,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 19:11:15 on Sep 25,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv 
+# -- Compiling module tb_key_expansion
+# 
+# Top level modules:
+# 	tb_key_expansion
+# End time: 19:11:15 on Sep 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_key_expansion
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_key_expansion 
+# Start time: 19:11:15 on Sep 25,2024
+# Loading sv_std.std
+# Loading work.tb_key_expansion
+# Loading work.key_expansion
+# Loading work.sub_word
+# Loading work.s_box
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 3, found 2.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_key_expansion/uut File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 11
+# ** Warning: (vsim-3722) C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv(11): [TFMPC] - Missing connection for port 'round'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Error: Test Case 1 Failed:          x
+#    Time: 10 ps  Scope: tb_key_expansion File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 30
+# ** Error: Test Case 1 Failed:          x
+#    Time: 10 ps  Scope: tb_key_expansion File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 31
+# ** Error: Test Case 1 Failed:          x
+#    Time: 10 ps  Scope: tb_key_expansion File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 32
+# ** Error: Test Case 1 Failed:          x
+#    Time: 10 ps  Scope: tb_key_expansion File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv Line: 33
+# ** Note: $finish    : C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv(36)
+#    Time: 10 ps  Iteration: 0  Instance: /tb_key_expansion
+# 1
+# Break in Module tb_key_expansion at C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_key_expansion.sv line 36
+# End time: 19:11:46 on Sep 25,2024, Elapsed time: 0:00:31
+# Errors: 4, Warnings: 2

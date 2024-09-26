@@ -1,50 +1,46 @@
 module key_expansion #(
-    parameter regSize = 8,                // Size of each register (8 bits)
-    parameter vecSize = 16                // Size of the key (128 bits / 8 bits per register = 16)
+    parameter regSize = 32,         // Size of each register (32 bits)
+    parameter vecSize = 4           // Number of registers (4 words for AES-128)
 ) (
-    input logic [vecSize-1:0][regSize-1:0] key,     // Input key as a 2D array (16 x 8 bits)
-    output logic [10:0][vecSize-1:0][regSize-1:0] round_keys // 11 round keys for AES-128
+    input logic [vecSize-1:0][regSize-1:0] current_key, // Input key as a 2D array (4 x 32 bits)
+	 input logic [3:0] round,
+    output logic [vecSize-1:0][regSize-1:0] next_key     // Output next round key
 );
 
-    logic [31:0] temp;                          // Temporary variable for key manipulation
-    logic [31:0] temp_sbox;                     // To store S-box substituted value
-
     // Define round constants (Rcon) as a LUT
-    logic [31:0] rcon [10:0] = {
-        32'h01000000, 32'h02000000, 32'h04000000,
-        32'h08000000, 32'h10000000, 32'h20000000,
-        32'h40000000, 32'h80000000, 32'h1b000000,
-        32'h36000000, 32'h00000000                 
-    };
+    logic [31:0] rcon [0:10];     
+    initial begin
+        rcon[0] = 32'h01000000; rcon[1] = 32'h02000000;
+        rcon[2] = 32'h04000000; rcon[3] = 32'h08000000;
+        rcon[4] = 32'h10000000; rcon[5] = 32'h20000000;
+        rcon[6] = 32'h40000000; rcon[7] = 32'h80000000;
+        rcon[8] = 32'h1b000000; rcon[9] = 32'h36000000;
+        rcon[10] = 32'h00000000; // This can be adjusted as needed
+    end
 
-    // First round key is the original key
-    assign round_keys[0] = key;
+    // Internal wire for the transformed word
+    logic [regSize-1:0] temp_word;    
+    logic [regSize-1:0] sub_word_out; // Output from sub_word module
 
-    // Instantiate the S-Box once
-    sub_bytes sbox_instance (
-        .state(temp), 
-        .new_state(temp_sbox)
+    // Instantiate the sub_word module
+    sub_word sub_word_inst (
+        .word_in(temp_word),
+        .word_out(sub_word_out)
     );
 
-    // Key expansion process
+    // Compute the next key
     always_comb begin
-        for (int i = 1; i <= 10; i++) begin
-            // Rotate the last 32 bits of the previous round key
-            temp = {round_keys[i-1][23:0], round_keys[i-1][127:24]}; 
+        // Start with the last word of the current key
+        temp_word = current_key[vecSize-1];
 
-            // Apply S-Box to the rotated value
-            // This assumes temp is being set to a value to be substituted
-            sbox_instance.state = temp; // Assign the temp value to the state input of the S-Box
-            // Wait for temp_sbox to be updated; it happens in the next cycle due to the combinational nature
+        // Always apply the sub_word transformation and the rotation
+        temp_word = {temp_word[regSize-2:0], temp_word[regSize-1]}; // Rotate left
+        temp_word = sub_word_out ^ rcon[round]; // XOR with the first round constant (for round 1)
 
-            // XOR with Rcon
-            temp = temp_sbox ^ rcon[i-1];
-
-            // Generate the new round key
-            round_keys[i][127:96] = round_keys[i-1][127:96] ^ temp;
-            round_keys[i][95:64]  = round_keys[i-1][95:64] ^ round_keys[i][127:96];
-            round_keys[i][63:32]  = round_keys[i-1][63:32] ^ round_keys[i][95:64];
-            round_keys[i][31:0]   = round_keys[i-1][31:0] ^ round_keys[i][63:32];
-        end
+        // Generate the next key
+        next_key[0] = current_key[0] ^ temp_word; // XOR with the first word
+        next_key[1] = current_key[1] ^ next_key[0]; // XOR with the previous result
+        next_key[2] = current_key[2] ^ next_key[1]; // XOR with the previous result
+        next_key[3] = current_key[3] ^ next_key[2]; // XOR with the previous result
     end
 endmodule
