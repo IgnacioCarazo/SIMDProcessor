@@ -2,8 +2,8 @@ module shift_rows #(
     parameter regSize = 32,        // Size of each register (32 bits)
     parameter vecSize = 4          // Number of registers (rows)
 )(
-    input logic [regSize-1:0] vect_in [vecSize-1:0],  // Input: vecSize x regSize bit matrix
-    output logic [regSize-1:0] vect_out [vecSize-1:0] // Output: vecSize x regSize bit matrix
+    input logic [vecSize-1:0][regSize-1:0] vect_in,    
+    output logic [vecSize-1:0][regSize-1:0] vect_out
 );
     always_comb begin
         // Intermediate transposed and shifted matrices

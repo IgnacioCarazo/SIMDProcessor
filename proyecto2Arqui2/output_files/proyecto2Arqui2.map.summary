@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Thu Sep 26 21:32:22 2024
+Analysis & Elaboration Status : Successful - Fri Sep 27 03:01:33 2024
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : proyecto2Arqui2
-Top-level Entity Name : tb_key_expansion
+Top-level Entity Name : tb_aes_operations_unit
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
