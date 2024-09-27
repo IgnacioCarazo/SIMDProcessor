@@ -7,6 +7,11 @@ module key_expansion #(
     output logic [vecSize-1:0][regSize-1:0] next_key     // Output next round key
 );
 
+
+	  // Internal wire for the transformed word
+    logic [regSize-1:0] temp_word;    
+    logic [regSize-1:0] sub_word_out; // Output from sub_word module
+	 
     // Define round constants (Rcon) as a LUT
     logic [31:0] rcon [0:10];     
     initial begin
@@ -18,9 +23,7 @@ module key_expansion #(
         rcon[10] = 32'h00000000; // This can be adjusted as needed
     end
 
-    // Internal wire for the transformed word
-    logic [regSize-1:0] temp_word;    
-    logic [regSize-1:0] sub_word_out; // Output from sub_word module
+   
 
     // Instantiate the sub_word module
     sub_word sub_word_inst (

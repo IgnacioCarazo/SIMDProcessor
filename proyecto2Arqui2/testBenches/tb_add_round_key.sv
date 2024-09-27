@@ -16,19 +16,21 @@ module tb_add_round_key;
         .round_key(round_key),
         .new_state(new_state)
     );
+	 
+
 
     // Test procedure
     initial begin
         // Test case 1
-        state[0] = 32'h00112233;    // First column of the state matrix
-        state[1] = 32'h44556677;    // Second column of the state matrix
-        state[2] = 32'h8899AABB;    // Third column of the state matrix
-        state[3] = 32'hCCDDEEFF;    // Fourth column of the state matrix
+        state[0] = 32'h591ceea1;    // First column of the state matrix
+        state[1] = 32'hc28636d1;    // Second column of the state matrix
+        state[2] = 32'hcaddaf02;    // Third column of the state matrix
+        state[3] = 32'h4a27dca2;    // Fourth column of the state matrix
 
-        round_key[0] = 32'hAABBCCDD; // First column of the round key
-        round_key[1] = 32'hEEFF0011; // Second column of the round key
-        round_key[2] = 32'h22334455; // Third column of the round key
-        round_key[3] = 32'h66778899; // Fourth column of the round key
+        round_key[0] = 32'h62636363; // First column of the round key
+        round_key[1] = 32'h62636363; // Second column of the round key
+        round_key[2] = 32'h62636363; // Third column of the round key
+        round_key[3] = 32'h62636363; // Fourth column of the round key
         
         // Wait for some time for results to be generated
         #10;

@@ -27,19 +27,6 @@ module tb_mix_columns;
         
         // Wait for some time for results to be generated
         #10;
-
-        // Display the results for debugging
-        $display("Test case 1: Input state matrix columns:");
-        $display("vect[0] = %h", vect[0]);
-        $display("vect[1] = %h", vect[1]);
-        $display("vect[2] = %h", vect[2]);
-        $display("vect[3] = %h", vect[3]);
-        
-        $display("Test case 1: Output after MixColumns transformation:");
-        $display("new_vect[0] = %h", new_vect[0]);
-        $display("new_vect[1] = %h", new_vect[1]);
-        $display("new_vect[2] = %h", new_vect[2]);
-        $display("new_vect[3] = %h", new_vect[3]);
         
 		  
 		  

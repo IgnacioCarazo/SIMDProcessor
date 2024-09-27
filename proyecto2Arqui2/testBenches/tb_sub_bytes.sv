@@ -15,23 +15,23 @@ module tb_sub_bytes;
 
     // Initial block to apply test vectors
 	 
-	 
+
 
     initial begin        
         // Test case 1
-        state[0] = 32'h73744765;  // Input state        
-        state[1] = 32'h63535465;  // Another input state
-        state[2] = 32'h5d5b5672;  // Another input state        
-        state[3] = 32'h7b746f5d;  // Another input state
+        state[0] = 32'h00000101;  // Input state        
+        state[1] = 32'h03030707;  // Another input state
+        state[2] = 32'h0f0f1f1f;  // Another input state        
+        state[3] = 32'h3f3f7f7f;  // Another input state
 
         // Wait for a small delay for the output to stabilize
         #10;
 
         // Assertions for expected output values        
-        assert(new_state[0] == 32'h8f92a04d) else $error("Test Case 1 Failed: Expected 8f92a04d but got %h", new_state[0]);
-        assert(new_state[1] == 32'hfbed204d) else $error("Test Case 2 Failed: Expected fbed204d but got %h", new_state[1]);        
-        assert(new_state[2] == 32'h4c39b140) else $error("Test Case 3 Failed: Expected 4c39b140 but got %h", new_state[2]);
-        assert(new_state[3] == 32'h2192a84c) else $error("Test Case 4 Failed: Expected 2192a83c but got %h", new_state[3]);
+        assert(new_state[0] == 32'h63637c7c) else $error("Test Case 1 Failed: Expected 63637c7c but got %h", new_state[0]);
+        assert(new_state[1] == 32'h7b7bc5c5) else $error("Test Case 2 Failed: Expected 7b7bc5c5 but got %h", new_state[1]);        
+        assert(new_state[2] == 32'h7676c0c0) else $error("Test Case 3 Failed: Expected 4c39b140 but got %h", new_state[2]);
+        assert(new_state[3] == 32'h7575d2d2) else $error("Test Case 4 Failed: Expected 2192a83c but got %h", new_state[3]);
 
         // Add more test cases as needed
 
