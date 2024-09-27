@@ -1,5 +1,5 @@
 Flow report for proyecto2Arqui2
-Fri Sep 27 03:01:33 2024
+Fri Sep 27 10:19:51 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Fri Sep 27 03:01:33 2024       ;
+; Flow Status                 ; Successful - Fri Sep 27 10:19:51 2024       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; proyecto2Arqui2                             ;
 ; Top-level Entity Name       ; tb_aes_operations_unit                      ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/27/2024 03:01:24 ;
+; Start date & time ; 09/27/2024 10:19:43 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; proyecto2Arqui2     ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+-----------------+------------------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value   ; Entity Name            ; Section Id                        ;
 +--------------------------------------+----------------------------------------+-----------------+------------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 10995770589193.172742768413560         ; --              ; --                     ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 10995770589193.172745398315776         ; --              ; --                     ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_matrix_transpose               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_sub_bytes                      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_mix_columns                    ;
@@ -133,8 +133,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:10     ; 1.0                     ; 4768 MB             ; 00:00:16                           ;
-; Total                  ; 00:00:10     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Elaboration ; 00:00:09     ; 1.0                     ; 4768 MB             ; 00:00:16                           ;
+; Total                  ; 00:00:09     ; --                      ; --                  ; 00:00:16                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

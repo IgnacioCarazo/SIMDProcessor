@@ -18,6 +18,35 @@ module tb_aes_operations_unit;
 
   // Initial block to apply test vectors
   initial begin
+  
+	 // Test case: KeyExpansion operation (operation_select = 3'b010)
+    operation_select = 3'b001;  // Set operation to KeyExpansion
+    // Input state for KeyExpansion operation
+    operand1[0] = 32'h00000000;    // First word of the key
+    operand1[1] = 32'h00000000;    // Second word of the key
+    operand1[2] = 32'h00000000;    // Third word of the key
+    operand1[3] = 32'h00000000;    // Fourth word of the key
+
+        // Set the round value in the 2D array (use specific round for each word if necessary)
+        // Example: Set the round value to 1 in all words (you can customize this if needed)
+    operand2[0] = 32'h00000001;  // First word has the round value 1
+    operand2[1] = 32'h00000001;  // Second word has the round value 1
+    operand2[2] = 32'h00000001;  // Third word has the round value 1
+    operand2[3] = 32'h00000001;  // Fourth word has the round value 1
+    
+    #10;  // Wait for the result to settle
+
+    // Display results
+    $display("Test Case: SubBytes operation");
+    $display("Result = %h", result);
+
+    // Assertions for expected SubBytes output
+    assert(result[0] == 32'h63637c7c) else $error("Test Case 1 Failed: Expected 63637c7c but got %h", result[0]);
+    assert(result[1] == 32'h7b7bc5c5) else $error("Test Case 2 Failed: Expected 7b7bc5c5 but got %h", result[1]);
+    assert(result[2] == 32'h7676c0c0) else $error("Test Case 3 Failed: Expected 7676c0c0 but got %h", result[2]);
+    assert(result[3] == 32'h7575d2d2) else $error("Test Case 4 Failed: Expected 7575d2d2 but got %h", result[3]);
+
+  
     // Test case: SubBytes operation (operation_select = 3'b010)
     operation_select = 3'b010;  // Set operation to SubBytes
     // Input state for SubBytes operation
@@ -86,10 +115,10 @@ module tb_aes_operations_unit;
     operand1[1] = result[1];
     operand1[2] = result[2];
     operand1[3] = result[3];
-    operand2[0] = 32'h2b7e1516;  // Example round key
-    operand2[1] = 32'h28aed2a6;
-    operand2[2] = 32'habf71588;
-    operand2[3] = 32'h09cf4f3c;
+    operand2[0] = 32'h61636363;  // Example round key
+    operand2[1] = 32'h61636363;
+    operand2[2] = 32'h61636363;
+    operand2[3] = 32'h61636363;
     #10;  // Wait for the result to settle
 
     // Display results

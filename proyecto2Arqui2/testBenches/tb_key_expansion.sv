@@ -34,10 +34,10 @@ module tb_key_expansion;
 
         // Check expected outputs for the next_key (adjust expected values based on the key expansion algorithm)
         // For this case, I'm assuming the next_key will be all zeros (modify this according to your expected values)
-        assert(next_key[0] == 32'h00000000) else $error("Test Case 1 Failed: ", next_key[0]);
-        assert(next_key[1] == 32'h00000000) else $error("Test Case 1 Failed: ", next_key[1]);
-        assert(next_key[2] == 32'h00000000) else $error("Test Case 1 Failed: ", next_key[2]);
-        assert(next_key[3] == 32'h00000000) else $error("Test Case 1 Failed: ", next_key[3]);
+        assert(next_key[0] == 32'h61636363) else $error("Test Case 1 Failed: ", next_key[0]);
+        assert(next_key[1] == 32'h61636363) else $error("Test Case 1 Failed: ", next_key[1]);
+        assert(next_key[2] == 32'h61636363) else $error("Test Case 1 Failed: ", next_key[2]);
+        assert(next_key[3] == 32'h61636363) else $error("Test Case 1 Failed: ", next_key[3]);
 
         // End of testbench
         $finish;
