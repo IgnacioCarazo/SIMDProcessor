@@ -10,86 +10,19 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:19:59 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv 
-# -- Compiling module mix_columns
-# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv(5): (vlog-13314) Defaulting port 'vect' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	mix_columns
-# End time: 10:19:59 on Sep 27,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_bytes.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:19:59 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_bytes.sv 
-# -- Compiling module sub_bytes
-# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_bytes.sv(5): (vlog-13314) Defaulting port 'state' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	sub_bytes
-# End time: 10:19:59 on Sep 27,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/shift_rows.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:19:59 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/shift_rows.sv 
-# -- Compiling module shift_rows
-# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/shift_rows.sv(5): (vlog-13314) Defaulting port 'vect_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	shift_rows
-# End time: 10:19:59 on Sep 27,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:19:59 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv 
-# -- Compiling module key_expansion
-# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv(5): (vlog-13314) Defaulting port 'current_key' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv(6): (vlog-13314) Defaulting port 'round' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	key_expansion
-# End time: 10:19:59 on Sep 27,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/aes_operations_unit.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:19:59 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/aes_operations_unit.sv 
-# -- Compiling module aes_operations_unit
-# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/aes_operations_unit.sv(5): (vlog-13314) Defaulting port 'operand1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/aes_operations_unit.sv(6): (vlog-13314) Defaulting port 'operand2' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	aes_operations_unit
-# End time: 10:19:59 on Sep 27,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:19:59 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv 
-# -- Compiling module sub_word
-# 
-# Top level modules:
-# 	sub_word
-# End time: 10:19:59 on Sep 27,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/xor_32bit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:19:59 on Sep 27,2024
+# Start time: 16:56:41 on Sep 27,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/xor_32bit.sv 
 # -- Compiling module xor_32bit
 # 
 # Top level modules:
 # 	xor_32bit
-# End time: 10:20:00 on Sep 27,2024, Elapsed time: 0:00:01
+# End time: 16:56:41 on Sep 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/add_round_key.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:20:00 on Sep 27,2024
+# Start time: 16:56:41 on Sep 27,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/add_round_key.sv 
 # -- Compiling module add_round_key
 # ** Warning: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/add_round_key.sv(2): (vlog-13314) Defaulting port 'state' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -97,96 +30,52 @@
 # 
 # Top level modules:
 # 	add_round_key
-# End time: 10:20:00 on Sep 27,2024, Elapsed time: 0:00:00
+# End time: 16:56:41 on Sep 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv}
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:20:00 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv 
-# -- Compiling module s_box
+# Start time: 16:56:41 on Sep 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv 
+# -- Compiling module tb_add_round_key
 # 
 # Top level modules:
-# 	s_box
-# End time: 10:20:00 on Sep 27,2024, Elapsed time: 0:00:00
+# 	tb_add_round_key
+# End time: 16:56:42 on Sep 27,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_column.sv}
+# 
+# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:20:00 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_column.sv 
-# -- Compiling module mix_column
+# Start time: 16:56:42 on Sep 27,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv 
+# -- Compiling module tb_add_round_key
 # 
 # Top level modules:
-# 	mix_column
-# End time: 10:20:00 on Sep 27,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:20:00 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv 
-# -- Compiling module tb_aes_operations_unit
-# 
-# Top level modules:
-# 	tb_aes_operations_unit
-# End time: 10:20:00 on Sep 27,2024, Elapsed time: 0:00:00
+# 	tb_add_round_key
+# End time: 16:56:42 on Sep 27,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches {C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 10:20:00 on Sep 27,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches" C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv 
-# -- Compiling module tb_aes_operations_unit
-# 
-# Top level modules:
-# 	tb_aes_operations_unit
-# End time: 10:20:00 on Sep 27,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_aes_operations_unit
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_aes_operations_unit 
-# Start time: 10:20:00 on Sep 27,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_add_round_key
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_add_round_key 
+# Start time: 16:56:42 on Sep 27,2024
 # Loading sv_std.std
-# Loading work.tb_aes_operations_unit
-# Loading work.aes_operations_unit
-# Loading work.sub_bytes
-# Loading work.shift_rows
-# Loading work.mix_columns
+# Loading work.tb_add_round_key
 # Loading work.add_round_key
-# Loading work.key_expansion
-# Loading work.sub_word
-# Loading work.s_box
-# Loading work.mix_column
 # Loading work.xor_32bit
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: AnaElena  Hostname: LAPTOP-59SATBKV  ProcessID: 17952
-#           Attempting to use alternate WLF file "./wlft0619if".
+#           Attempting to use alternate WLF file "./wlft0tvq4v".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft0619if
+#           Using alternate file: ./wlft0tvq4v
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Test Case: SubBytes operation
-# Result = 61636363616363636163636361636363
-# ** Error: Test Case 1 Failed: Expected 63637c7c but got 61636363
-#    Time: 10 ps  Scope: tb_aes_operations_unit File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv Line: 44
-# ** Error: Test Case 2 Failed: Expected 7b7bc5c5 but got 61636363
-#    Time: 10 ps  Scope: tb_aes_operations_unit File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv Line: 45
-# ** Error: Test Case 3 Failed: Expected 7676c0c0 but got 61636363
-#    Time: 10 ps  Scope: tb_aes_operations_unit File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv Line: 46
-# ** Error: Test Case 4 Failed: Expected 7575d2d2 but got 61636363
-#    Time: 10 ps  Scope: tb_aes_operations_unit File: C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv Line: 47
-# Test Case: SubBytes operation
-# Result = 7575d2d27676c0c07b7bc5c563637c7c
-# Test Case: ShiftRows operation
-# Result = 7563c5c076757cc57b76d27c637bc0d2
-# Test Case: MixColumns operation
-# Result = 4a27dca2caddaf02c28636d1591ceea1
-# Test Case: AddRoundKey operation
-# Result = 2b44bfc1abbecc61a3e555b2387f8dc2
-# ** Note: $finish    : C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv(134)
-#    Time: 50 ps  Iteration: 0  Instance: /tb_aes_operations_unit
-# End time: 11:05:36 on Sep 27,2024, Elapsed time: 0:45:36
-# Errors: 4, Warnings: 2
+# ** Note: $finish    : C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv(45)
+#    Time: 10 ps  Iteration: 0  Instance: /tb_add_round_key
+# 1
+# Break in Module tb_add_round_key at C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv line 45
+# End time: 17:13:56 on Sep 27,2024, Elapsed time: 0:17:14
+# Errors: 0, Warnings: 2

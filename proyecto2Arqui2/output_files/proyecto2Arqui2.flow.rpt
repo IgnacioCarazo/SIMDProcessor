@@ -1,5 +1,5 @@
 Flow report for proyecto2Arqui2
-Fri Sep 27 10:19:51 2024
+Fri Sep 27 16:56:33 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,10 +41,10 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Fri Sep 27 10:19:51 2024       ;
+; Flow Status                 ; Successful - Fri Sep 27 16:56:33 2024       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; proyecto2Arqui2                             ;
-; Top-level Entity Name       ; tb_aes_operations_unit                      ;
+; Top-level Entity Name       ; tb_add_round_key                            ;
 ; Family                      ; Cyclone V                                   ;
 ; Device                      ; 5CSEMA5F31C6                                ;
 ; Timing Models               ; Final                                       ;
@@ -63,69 +63,73 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/27/2024 10:19:43 ;
+; Start date & time ; 09/27/2024 16:56:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; proyecto2Arqui2     ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                             ;
-+--------------------------------------+----------------------------------------+-----------------+------------------------+-----------------------------------+
-; Assignment Name                      ; Value                                  ; Default Value   ; Entity Name            ; Section Id                        ;
-+--------------------------------------+----------------------------------------+-----------------+------------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 10995770589193.172745398315776         ; --              ; --                     ; --                                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_matrix_transpose               ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_sub_bytes                      ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_mix_columns                    ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_key_expansion                  ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_aes_operations_unit            ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_sub_word                       ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_add_round_key                  ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --                     ; tb_shift_rows                     ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --              ; --                     ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --              ; --                     ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --              ; --                     ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --              ; --                     ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_aes_operations_unit                 ; --              ; --                     ; eda_simulation                    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --              ; --                     ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>          ; --                     ; --                                ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --              ; --                     ; eda_simulation                    ;
-; EDA_TEST_BENCH_FILE                  ; testBenches/tb_matrix_transpose.sv     ; --              ; --                     ; tb_matrix_transpose               ;
-; EDA_TEST_BENCH_FILE                  ; testBenches/tb_sub_bytes.sv            ; --              ; --                     ; tb_sub_bytes                      ;
-; EDA_TEST_BENCH_FILE                  ; testBenches/tb_mix_columns.sv          ; --              ; --                     ; tb_mix_columns                    ;
-; EDA_TEST_BENCH_FILE                  ; testBenches/tb_key_expansion.sv        ; --              ; --                     ; tb_key_expansion                  ;
-; EDA_TEST_BENCH_FILE                  ; testBenches/tb_aes_operations_unit.sv  ; --              ; --                     ; tb_aes_operations_unit            ;
-; EDA_TEST_BENCH_FILE                  ; testBenches/tb_sub_word.sv             ; --              ; --                     ; tb_sub_word                       ;
-; EDA_TEST_BENCH_FILE                  ; testBenches/tb_add_round_key.sv        ; --              ; --                     ; tb_add_round_key                  ;
-; EDA_TEST_BENCH_FILE                  ; testBenches/tb_shift_rows.sv           ; --              ; --                     ; tb_shift_rows                     ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_matrix_transpose                    ; --              ; --                     ; tb_matrix_transpose               ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_sub_bytes                           ; --              ; --                     ; tb_sub_bytes                      ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_mix_columns                         ; --              ; --                     ; tb_mix_columns                    ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_key_expansion                       ; --              ; --                     ; tb_key_expansion                  ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_aes_operations_unit                 ; --              ; --                     ; tb_aes_operations_unit            ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_sub_word                            ; --              ; --                     ; tb_sub_word                       ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_add_round_key                       ; --              ; --                     ; tb_add_round_key                  ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_shift_rows                          ; --              ; --                     ; tb_shift_rows                     ;
-; EDA_TEST_BENCH_NAME                  ; tb_sub_bytes                           ; --              ; --                     ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; tb_shift_rows                          ; --              ; --                     ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; tb_matrix_transpose                    ; --              ; --                     ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; tb_mix_columns                         ; --              ; --                     ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; tb_key_expansion                       ; --              ; --                     ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; tb_add_round_key                       ; --              ; --                     ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; tb_sub_word                            ; --              ; --                     ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; tb_aes_operations_unit                 ; --              ; --                     ; eda_simulation                    ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --              ; --                     ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --              ; --                     ; --                                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --              ; --                     ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --              ; tb_aes_operations_unit ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --              ; tb_aes_operations_unit ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --              ; tb_aes_operations_unit ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --              ; --                     ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --              ; --                     ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --              ; --                     ; --                                ;
-; TOP_LEVEL_ENTITY                     ; tb_aes_operations_unit                 ; proyecto2Arqui2 ; --                     ; --                                ;
-+--------------------------------------+----------------------------------------+-----------------+------------------------+-----------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                       ;
++--------------------------------------+----------------------------------------+-----------------+------------------+-----------------------------------+
+; Assignment Name                      ; Value                                  ; Default Value   ; Entity Name      ; Section Id                        ;
++--------------------------------------+----------------------------------------+-----------------+------------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 10995770589193.172747778401484         ; --              ; --               ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --               ; tb_matrix_transpose               ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --               ; tb_sub_bytes                      ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --               ; tb_mix_columns                    ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --               ; tb_key_expansion                  ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --               ; tb_aes_operations_unit            ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --               ; tb_sub_word                       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --               ; tb_add_round_key                  ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --               ; tb_fetch                          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --              ; --               ; tb_shift_rows                     ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --              ; --               ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --              ; --               ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --              ; --               ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --              ; --               ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_add_round_key                       ; --              ; --               ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --              ; --               ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>          ; --               ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --              ; --               ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; testBenches/tb_matrix_transpose.sv     ; --              ; --               ; tb_matrix_transpose               ;
+; EDA_TEST_BENCH_FILE                  ; testBenches/tb_sub_bytes.sv            ; --              ; --               ; tb_sub_bytes                      ;
+; EDA_TEST_BENCH_FILE                  ; testBenches/tb_mix_columns.sv          ; --              ; --               ; tb_mix_columns                    ;
+; EDA_TEST_BENCH_FILE                  ; testBenches/tb_key_expansion.sv        ; --              ; --               ; tb_key_expansion                  ;
+; EDA_TEST_BENCH_FILE                  ; testBenches/tb_aes_operations_unit.sv  ; --              ; --               ; tb_aes_operations_unit            ;
+; EDA_TEST_BENCH_FILE                  ; testBenches/tb_sub_word.sv             ; --              ; --               ; tb_sub_word                       ;
+; EDA_TEST_BENCH_FILE                  ; testBenches/tb_add_round_key.sv        ; --              ; --               ; tb_add_round_key                  ;
+; EDA_TEST_BENCH_FILE                  ; testBenches/tb_fetch.sv                ; --              ; --               ; tb_fetch                          ;
+; EDA_TEST_BENCH_FILE                  ; testBenches/tb_shift_rows.sv           ; --              ; --               ; tb_shift_rows                     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_matrix_transpose                    ; --              ; --               ; tb_matrix_transpose               ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_sub_bytes                           ; --              ; --               ; tb_sub_bytes                      ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_mix_columns                         ; --              ; --               ; tb_mix_columns                    ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_key_expansion                       ; --              ; --               ; tb_key_expansion                  ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_aes_operations_unit                 ; --              ; --               ; tb_aes_operations_unit            ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_sub_word                            ; --              ; --               ; tb_sub_word                       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_add_round_key                       ; --              ; --               ; tb_add_round_key                  ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_fetch                               ; --              ; --               ; tb_fetch                          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_shift_rows                          ; --              ; --               ; tb_shift_rows                     ;
+; EDA_TEST_BENCH_NAME                  ; tb_sub_bytes                           ; --              ; --               ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_shift_rows                          ; --              ; --               ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_matrix_transpose                    ; --              ; --               ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_mix_columns                         ; --              ; --               ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_key_expansion                       ; --              ; --               ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_add_round_key                       ; --              ; --               ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_sub_word                            ; --              ; --               ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_aes_operations_unit                 ; --              ; --               ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_fetch                               ; --              ; --               ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --              ; --               ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --              ; --               ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --              ; --               ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --              ; tb_add_round_key ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --              ; tb_add_round_key ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --              ; tb_add_round_key ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --              ; --               ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --              ; --               ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --              ; --               ; --                                ;
+; TOP_LEVEL_ENTITY                     ; tb_add_round_key                       ; proyecto2Arqui2 ; --               ; --                                ;
++--------------------------------------+----------------------------------------+-----------------+------------------+-----------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -133,8 +137,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:09     ; 1.0                     ; 4768 MB             ; 00:00:16                           ;
-; Total                  ; 00:00:09     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Elaboration ; 00:00:09     ; 1.0                     ; 4764 MB             ; 00:00:15                           ;
+; Total                  ; 00:00:09     ; --                      ; --                  ; 00:00:15                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
