@@ -43,13 +43,20 @@ op_code_dict = {
     "MUL": "0100",
     "SHFD": "0101",
     "SHFI": "0110",
+    "KEXP ": "0001",
+    "SUBB ": "0001",
+    "SROS ": "0010",
+    "MIXC ": "0011",
+    "ARKE ": "0100",
+    "SUBBINV ": "0101",
+    "MIXCINV ": "0110",
 }
 
 # Branch que almacenará
 branchs_dict = {}
 
 # listas de instrucciones que esperan por cantidad de argumentos
-one_operand_instructions = ["SLT", "SLI", "SNI", "INC", "MVM", "ALM"]
+one_operand_instructions = ["SLT", "SLI", "SNI", "INC", "MVM", "ALM","KEXP","SUBB","SROS","MIXC","ARKE","SUBBINV","MIXCINV"]
 
 two_operand_instructions = [
     "CRGS",
