@@ -24,20 +24,20 @@ module tb_key_expansion;
 
         // Set the round value in the 2D array (use specific round for each word if necessary)
         // Example: Set the round value to 1 in all words (you can customize this if needed)
-        round[0] = 32'h00000001;  // First word has the round value 1
-        round[1] = 32'h00000001;  // Second word has the round value 1
-        round[2] = 32'h00000001;  // Third word has the round value 1
-        round[3] = 32'h00000001;  // Fourth word has the round value 1
+        round[0] = 32'h00000000;  // First word has the round value 1
+        round[1] = 32'h00000000;  // Second word has the round value 1
+        round[2] = 32'h00000000;  // Third word has the round value 1
+        round[3] = 32'h00000000;  // Fourth word has the round value 1
 
         // Wait for the next key to stabilize
         #10;
 
         // Check expected outputs for the next_key (adjust expected values based on the key expansion algorithm)
         // For this case, I'm assuming the next_key will be all zeros (modify this according to your expected values)
-        assert(next_key[0] == 32'h61636363) else $error("Test Case 1 Failed: ", next_key[0]);
-        assert(next_key[1] == 32'h61636363) else $error("Test Case 1 Failed: ", next_key[1]);
-        assert(next_key[2] == 32'h61636363) else $error("Test Case 1 Failed: ", next_key[2]);
-        assert(next_key[3] == 32'h61636363) else $error("Test Case 1 Failed: ", next_key[3]);
+        assert(next_key[0] == 32'h61636363) else $error("Test Case 1 Failed: %h", next_key[0]);
+        assert(next_key[1] == 32'h61636363) else $error("Test Case 1 Failed: %h", next_key[1]);
+        assert(next_key[2] == 32'h61636363) else $error("Test Case 1 Failed: %h", next_key[2]);
+        assert(next_key[3] == 32'h61636363) else $error("Test Case 1 Failed: %h", next_key[3]);
 
         // End of testbench
         $finish;

@@ -1,29 +1,46 @@
 module reg_file #(
-    parameter regSize = 128, // Change to 128 bits
-    parameter regQuantity = 16,
-    parameter selBits = 4
-)
+    parameter registerSize = 16,
+    parameter registerQuantity = 4,
+    parameter selectionBits = 2, // 3 for 8 registers, 2 for 4 registers, and so on
+    parameter vectorSize = 4)
 (
     input clk, reset,
-    input reWrEn, // Only scalar write enable
-    input [selBits-1:0] rSel1, rSel2, // Register selection signal for reading.
-    input [selBits-1:0] regToWrite, // Register where the new data will be written.
+    input regWrEnSc, regWrEnVec,
+    input [selectionBits-1:0] rSel1, rSel2,
+    input [selectionBits-1:0] regToWrite,
 
-    input [regSize-1:0] dataIn, // 128-bit scalar input data for the registers.
-    output [regSize-1:0] operand1, operand2 // 128-bit outputs for the read operands.
+    input [vectorSize-1:0] [registerSize-1:0] dataIn,
+    output [vectorSize-1:0] [registerSize-1:0] operand1, operand2
 );
 
-    logic [regSize-1:0] scalar_reg1Out, scalar_reg2Out;
+    logic [registerSize-1:0] scalar_reg1Out, scalar_reg2Out;
+    logic [vectorSize-1:0] [registerSize-1:0] vector_reg1Out, vector_reg2Out;
+    logic [vectorSize-1:0] [registerSize-1:0] vectorized_scalar_reg1Out, vectorized_scalar_reg2Out;
 
-    scalar_reg_file #(regSize, regQuantity, selBits) scalarRegisters(
+    scalar_reg_file #(registerSize, 16, selectionBits) scalarRegisters(
         .clk(clk), .reset(reset),
-        .regWrEn(reWrEn), .rSel1(rSel1), .rSel2(rSel2),
-        .regToWrite(regToWrite), .dataIn(dataIn),
+        .regWrEn(regWrEnSc), .rSel1(rSel1), .rSel2(rSel2),
+        .regToWrite(regToWrite), .dataIn(dataIn[0]), // For scalars we will just take in consideration the first element
         .reg1Out(scalar_reg1Out), .reg2Out(scalar_reg2Out)
     );
 
-    assign operand1 = scalar_reg1Out;
-    assign operand2 = scalar_reg2Out;
+    vector_extender #(vectorSize, registerSize) scalar_reg1_extender(
+        .inData(scalar_reg1Out), .outData(vectorized_scalar_reg1Out)
+    );
+    vector_extender #(vectorSize, registerSize) scalar_reg2_extender(
+        .inData(scalar_reg2Out), .outData(vectorized_scalar_reg2Out)
+    );
 
+    vector_reg_file #(
+        registerSize, registerQuantity, selectionBits-1, vectorSize
+    ) vectorialRegisters(
+        .clk(clk), .reset(reset),
+        .regWrEn(regWrEnVec), .rSel1(rSel1), .rSel2(rSel2), 
+        .regToWrite(regToWrite), .regWriteData(dataIn),
+        .reg1Out(vector_reg1Out), .reg2Out(vector_reg2Out)
+    );
+
+    // MSB as selector for vector/scalar
+    assign operand1 = rSel1[selectionBits-2] ? vectorized_scalar_reg1Out : vector_reg1Out;
+    assign operand2 = rSel2[selectionBits-2] ? vectorized_scalar_reg2Out : vector_reg2Out;
 endmodule
-
