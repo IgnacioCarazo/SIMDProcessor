@@ -28,40 +28,29 @@ module stage_decoder_test();
 		instruction = 0;
       // Tests:
       #10;
-		// Test LMEM
-		instruction = 24'b111100001111000011110000;  // Instrucción para LMEM
+		
+		// Test CRGS
+		instruction = 24'b000000001111000000000010;  // Instrucción para CRGS
 		#10;
-		$display("LMEM -> PcWriteEn: %b, MemoryWrite: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, Immediate: %d, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
+		$display("CRGS -> PcWriteEn: %b, MemoryWrite: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, Immediate: %d, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, WriteRegFrom, OverWriteNz, RegToWrite, Immediate, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
 
-		// Test LOSC
-		instruction = 24'b000000001111000000000010;  // Instrucción para LOSC
+		// Test SUB
+		instruction = 24'b001100001010001100110011;  // Instrucción para SUB
 		#10;
-		$display("LOSC -> PcWriteEn: %b, MemoryWrite: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, Immediate: %d, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
-		PcWriteEn, MemoryWrite, WriteRegFrom, OverWriteNz, RegToWrite, Immediate, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
-
-		// Test DCAE (SUB)
-		instruction = 24'b001100001010001100110011;  // Instrucción para SUB (DCAE)
-		#10;
-		$display("DCAE -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
+		$display("SUB -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, AluOpCode, WriteRegFrom, OverWriteNz, RegToWrite, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
 
-		// Test JMP
-		instruction = 24'b101000000101000000010101;  // Instrucción para JMP
+		// Test J
+		instruction = 24'b101000000101000000010101;  // Instrucción para J
 		#10;
-		$display("JMP -> PcWriteEn: %b, MemoryWrite: %b, OverWriteNz: %b, Immediate: %d, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
+		$display("J -> PcWriteEn: %b, MemoryWrite: %b, OverWriteNz: %b, Immediate: %d, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, OverWriteNz, Immediate, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
 
-		// Test JE
-		instruction = 24'b100000000100000000010000;  // Instrucción para JE
+		// Test CMP
+		instruction = 24'b100000000100000000010000;  // Instrucción para CMP
 		#10;
-		$display("JE -> PcWriteEn: %b, MemoryWrite: %b, OverWriteNz: %b, Immediate: %d, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
-		PcWriteEn, MemoryWrite, OverWriteNz, Immediate, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
-
-		// Test JNE
-		instruction = 24'b100100000100000000110010;  // Instrucción para JNE
-		#10;
-		$display("JNE -> PcWriteEn: %b, MemoryWrite: %b, OverWriteNz: %b, Immediate: %d, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
+		$display("CMP -> PcWriteEn: %b, MemoryWrite: %b, OverWriteNz: %b, Immediate: %d, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, OverWriteNz, Immediate, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
 
 		// Test XOR
@@ -70,10 +59,10 @@ module stage_decoder_test();
 		$display("XOR -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, AluOpCode, WriteRegFrom, OverWriteNz, RegToWrite, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
 
-		// Test ECAE (ADD)
-		instruction = 24'b001000001001000000110010;  // Instrucción para ADD (ECAE)
+		// Test SUM
+		instruction = 24'b001000001001000000110010;  // Instrucción para SUM
 		#10;
-		$display("ECAE -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
+		$display("SUM -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, AluOpCode, WriteRegFrom, OverWriteNz, RegToWrite, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
 
 		// Test MUL
@@ -82,28 +71,22 @@ module stage_decoder_test();
 		$display("MUL -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, AluOpCode, WriteRegFrom, OverWriteNz, RegToWrite, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
 
-		// Test RSHF
-		instruction = 24'b010100001010000100100101;  // Instrucción para RSHF
+		// Test SHFD
+		instruction = 24'b010100001010000100100101;  // Instrucción para SHFD
 		#10;
-		$display("RSHF -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
+		$display("SHFD -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, AluOpCode, WriteRegFrom, OverWriteNz, RegToWrite, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
 
-		// Test LSHF
-		instruction = 24'b011000001011000100100110;  // Instrucción para LSHF
+		// Test SHFI
+		instruction = 24'b011000001011000100100110;  // Instrucción para SHFI
 		#10;
-		$display("LSHF -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
+		$display("SHFI -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, AluOpCode, WriteRegFrom, OverWriteNz, RegToWrite, RegWriteEnSc, RegWriteEnVec, writeMemFrom);
 
 		// Test INC
 		instruction = 24'b011100000111000111100111;  // Instrucción para INC
 		#10;
 		$display("INC -> PcWriteEn: %b, MemoryWrite: %b, AluOpCode: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b",
-		PcWriteEn, MemoryWrite, AluOpCode, WriteRegFrom, OverWriteNz, RegToWrite, RegWriteEnSc, RegWriteEnVec);
-
-		// Test LOPIX
-		instruction = 24'b110100001010000010100101;  // Instrucción para LOPIX
-		#10;
-		$display("LOPIX -> PcWriteEn: %b, MemoryWrite: %b, WriteRegFrom: %b, OverWriteNz: %b, RegToWrite: %b, RegWriteEnSc: %b, RegWriteEnVec: %b, writeMemFrom: %b",
 		PcWriteEn, MemoryWrite, AluOpCode, WriteRegFrom, OverWriteNz, RegToWrite, RegWriteEnSc, RegWriteEnVec);
 
 		#20;
