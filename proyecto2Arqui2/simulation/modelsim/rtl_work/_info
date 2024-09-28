@@ -11,7 +11,7 @@ cModel Technology
 Z0 dC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/simulation/modelsim
 vadd_round_key
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1727477801
+Z2 !s110 1727487801
 !i10b 1
 !s100 EFX?NL`GAdj9<<YiOORm<3
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -22,41 +22,249 @@ R0
 w1727298737
 8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/add_round_key.sv
 FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/add_round_key.sv
-!i122 1
+!i122 7
 L0 1 17
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1727477801.000000
+Z6 !s108 1727487801.000000
 !s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/add_round_key.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/add_round_key.sv|
 !i113 1
 Z7 o-sv -work work
 Z8 !s92 -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage
 Z9 tCvgOpt 0
-vtb_add_round_key
+vaes_operations_unit
 R1
-!s110 1727477802
+R2
 !i10b 1
-!s100 D4ZCoX5=K@^ACCHSVJF@V2
+!s100 J?Doa5N4jWdl=?f47fknX3
 R3
-I6;aaERT`PQL_c@;@9R`5k3
+ID<kkejPMVX=ILYhH[o3<<1
 R4
 S1
 R0
-w1727406357
-8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv
-FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv
-!i122 3
-L0 1 47
+w1727426898
+8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/aes_operations_unit.sv
+FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/aes_operations_unit.sv
+!i122 4
+L0 1 80
 R5
 r1
 !s85 0
 31
-!s108 1727477802.000000
-!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_add_round_key.sv|
+R6
+!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/aes_operations_unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/aes_operations_unit.sv|
+!i113 1
+R7
+R8
+R9
+vkey_expansion
+R1
+R2
+!i10b 1
+!s100 ken:`AG@;ag1gde43Mi9>3
+R3
+IV68?;F<?RmkG?@^[YlVR00
+R4
+S1
+R0
+w1727487386
+8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv
+FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv
+!i122 3
+L0 1 85
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/key_expansion.sv|
+!i113 1
+R7
+R8
+R9
+vmix_column
+R1
+R2
+!i10b 1
+!s100 b7J<@4zjg=Nh7CzBOhZ0P2
+R3
+Ie_n^>Y?nS2eQcVi4=eiS_1
+R4
+S1
+R0
+w1727316201
+8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_column.sv
+FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_column.sv
+!i122 9
+L0 1 35
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_column.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_column.sv|
+!i113 1
+R7
+Z10 !s92 -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns
+R9
+vmix_columns
+R1
+Z11 !s110 1727487800
+!i10b 1
+!s100 n7Ue`KK1?WdFJdAJUXVNC2
+R3
+I:n29ULk>PahdaI8KjgC<l3
+R4
+S1
+R0
+w1727316166
+8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv
+FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv
+!i122 0
+Z12 L0 1 20
+R5
+r1
+!s85 0
+31
+Z13 !s108 1727487800.000000
+!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/mixColumns/mix_columns.sv|
+!i113 1
+R7
+R10
+R9
+vs_box
+R1
+R2
+!i10b 1
+!s100 F:2_UEfI12LSN0lD8?ohC0
+R3
+IS1naC32U`dlM0fZlzL0c>0
+R4
+S1
+R0
+w1727304040
+8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv
+FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv
+!i122 8
+L0 1 33
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common/s_box.sv|
+!i113 1
+R7
+!s92 -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/common
+R9
+vshift_rows
+R1
+R2
+!i10b 1
+!s100 J<JS8klTZOa@U=NBC`Dba1
+R3
+IL`4T1lP_=k6dfHDn;cTE93
+R4
+S1
+R0
+w1727425868
+8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/shift_rows.sv
+FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/shift_rows.sv
+!i122 2
+L0 1 31
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/shift_rows.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/shift_rows.sv|
+!i113 1
+R7
+R8
+R9
+vsub_bytes
+R1
+R11
+!i10b 1
+!s100 gz0ibA^f2WCDVk8?X83BW3
+R3
+IidK4>XMaQcQJ5[zPSGPG]3
+R4
+S1
+R0
+w1727425445
+8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_bytes.sv
+FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_bytes.sv
+!i122 1
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_bytes.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_bytes.sv|
+!i113 1
+R7
+R8
+R9
+vsub_word
+R1
+R2
+!i10b 1
+!s100 lW1eFO>iPN8]6PD_eOY2V0
+R3
+I6[3ChN1aK20880A9YJz7A0
+R4
+S1
+R0
+w1727301384
+8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv
+FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv
+!i122 5
+L0 1 34
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/sub_word.sv|
+!i113 1
+R7
+R8
+R9
+vtb_aes_operations_unit
+R1
+!s110 1727487802
+!i10b 1
+!s100 F00TL`<[d4i_QHegz6XNA3
+R3
+I72UhYhe35:@mF?H=>]3Ek2
+R4
+S1
+R0
+w1727487781
+8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv
+FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv
+!i122 11
+L0 1 135
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches|C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches/tb_aes_operations_unit.sv|
 !i113 1
 R7
 !s92 -sv -work work +incdir+C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/testBenches
@@ -74,7 +282,7 @@ R0
 w1727298450
 8C:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/xor_32bit.sv
 FC:/cosas_nacho/GitHub/SIMDProcessor/proyecto2Arqui2/executeStage/xor_32bit.sv
-!i122 0
+!i122 6
 L0 1 11
 R5
 r1
