@@ -43,13 +43,13 @@ op_code_dict = {
     "MUL": "0100",
     "SHFD": "0101",
     "SHFI": "0110",
-    "KEXP ": "0001",
-    "SUBB ": "0001",
-    "SROS ": "0010",
-    "MIXC ": "0011",
-    "ARKE ": "0100",
-    "SUBBINV ": "0101",
-    "MIXCINV ": "0110",
+    "KEXP": "0001",
+    "SUBB": "0001",
+    "SROS": "0010",
+    "MIXC": "0011",
+    "ARKE": "0100",
+    "SUBBINV": "0101",
+    "MIXCINV": "0110",
 }
 
 # Branch que almacenará
@@ -238,10 +238,11 @@ def compile_jumps(instruction):
     return f"{command_opcode}0000{branch_dir}"
 
 
-# "MVM", "ALM"
+# "MVM", "ALM","KEXP","SUBB","SROS","MIXC","ARKE","SUBBINV","MIXCINV"
 def compile_one_op(instruction):
     global register_dict, op_code_dict, vectorial_regs
     command = instruction[0]
+    
     command_opcode = op_code_dict[command]
     register = instruction[1]
 
@@ -415,9 +416,11 @@ def compile_instructions(instruction_matrix):
 def main():
     # Recibe el path del codigo fuente
     # Debe compilarse como py compiler.py -f <path>
-
+    script_dir = os.path.dirname(os.path.abspath(__file__))  # Obtiene la ruta del directorio actual del script
+    relative_path = 'prueba_comp.txt'  # Nombre del archivo
+    path_source_file = os.path.join(script_dir, relative_path)
+    
     #path_source_file = input('Ubicaccion del archivo (.txt)')
-    path_source_file = 'prueba_comp.txt'
     # Chequea el archivo de entrada.
 
     checks_input_file(path_source_file)
@@ -431,7 +434,8 @@ def main():
 
     # De binario a hexa
     compiled_instructions = list_binary_to_hex(compiled_instructions)
-
+    relative_path = 'results.txt'  # Nombre del archivo
+    path_out_file = os.path.join(script_dir, relative_path)
     save_results(compiled_instructions, "results.txt")
     print('fin de compilacion')
 
