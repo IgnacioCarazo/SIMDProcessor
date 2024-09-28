@@ -1,0 +1,58 @@
+
+inicio:
+
+CRGS R7 1
+CRGS R8 1
+CMP 1 R7 
+SLI key_additionE
+CMP 2 R7  
+SLI key_additionD
+
+
+byte_subsE:
+SUBB V0
+
+shift_rowsE:
+SROS V0
+
+mix_colsE:
+MIXC V0
+
+key_scheE:
+ARKE V1
+
+
+key_additionE:
+KEXP V1
+
+encrypt:
+CMP 10 R8   
+SLI fin
+INC R8 
+SLT  byte_subsE  
+
+
+
+byte_subsD:
+SUBBINV V0
+
+shift_rowsD:
+SROS V0
+
+mix_colsD:
+MIXCINV V0
+
+key_scheD:
+ARKE V1
+
+
+key_additionD:
+KEXP V1
+
+Decrypt:
+CMP 10 R8
+SLI fin
+INC R8
+SLT  byte_subsE
+
+fin:

@@ -1,0 +1,68 @@
+// Asumeindo que la palabra esta en r0 y la llave esta r1 (WIP)
+inicio:
+
+CGRM R0  llave
+CGRM R1  texto
+CRGS R7  1
+CMP 1  R7
+SLI key_additionE
+CMP 2  R7 
+CRGS R7  1
+SLI key_additionD
+
+
+
+
+byte_subsE:
+SUBB V0
+
+shift_rowsE:
+SROS V0
+
+mix_colsE:
+MIXC V0
+
+key_scheE:
+ARKE V1
+
+
+key_additionE:
+
+SHFIr2  r1  #2
+MUL r2  r2  #16
+SUM r2  r2  r3 
+SHFIr2  r2  #
+SUM r2  r2  r1   
+MVM r3  r2
+
+encrypt:
+CMP 10  R8   
+SLI fin  
+INC R8  
+SLT  byte_subsE
+
+
+
+
+byte_subsD:
+SUBBINV V0
+
+shift_rowsD:
+SROS V0
+
+mix_colsD:
+MIXCINV V0
+
+key_scheD:
+ARKE V1
+
+key_additionD:
+KEXP V1
+
+Decrypt:
+CMP 10  R8   
+SLI fin 
+INC R8
+SLT  byte_subsE
+
+fin:
