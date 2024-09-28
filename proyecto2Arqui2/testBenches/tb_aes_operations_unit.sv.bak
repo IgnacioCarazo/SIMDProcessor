@@ -1,0 +1,68 @@
+module tb_aes_operations_unit;
+
+  parameter regSize = 32;
+  parameter vecSize = 4;
+
+  // Declare input and output signals for the aes_operations_unit module
+  logic [vecSize-1:0][regSize-1:0] operand1;
+  logic [vecSize-1:0][regSize-1:0] operand2;
+  logic [2:0] operation_select;
+  logic [vecSize-1:0][regSize-1:0] result;
+  logic [vecSize-1:0][regSize-1:0] next_key;
+
+  // Instantiate the aes_operations_unit
+  aes_operations_unit #(regSize, vecSize) uut (
+      .operand1(operand1),
+      .operand2(operand2),
+      .operation_select(operation_select),
+      .result(result),
+      .next_key(next_key)
+  );
+
+  // Initial block to apply test vectors
+  initial begin
+    
+	 // Test case 1
+	 operand1[0] = 32'h00000101;  // Input state        
+	 operand1[1] = 32'h03030707;  // Another input state
+	 operand1[2] = 32'h0f0f1f1f;  // Another input state        
+	 operand1[3] = 32'h3f3f7f7f;  // Another input state
+
+    // Test Case 2: SubBytes operation (operation_select = 3'b010)
+    operand2 = '0;  // No round key used in this test
+    operation_select = 3'b010;  // SubBytes
+
+    #10;  // Wait for the result to settle
+    $display("Test Case 2: SubBytes");
+    $display("Result = %h", result);
+
+    // Test Case 3: ShiftRows operation (operation_select = 3'b011)
+    operand1 = result;  // Use the SubBytes output as the input for ShiftRows
+    operand2 = '0;  // No round key used in this test
+    operation_select = 3'b011;  // ShiftRows
+
+    #10;  // Wait for the result to settle
+    $display("Test Case 3: ShiftRows");
+    $display("Result = %h", result);
+
+    // Test Case 4: MixColumns operation (operation_select = 3'b100)
+    operand1 = result;  // Use the ShiftRows output as the input for MixColumns
+    operand2 = '0;  // No round key used in this test
+    operation_select = 3'b100;  // MixColumns
+
+    #10;  // Wait for the result to settle
+    $display("Test Case 4: MixColumns");
+    $display("Result = %h", result);
+
+    // Test Case 5: AddRoundKey operation (operation_select = 3'b101)
+    operand1 = result;  // Use the MixColumns output as the input state
+    operand2 = next_key;  // Use the expanded key as the round key
+    operation_select = 3'b101;  // AddRoundKey
+
+    #10;  // Wait for the result to settle
+    $display("Test Case 5: AddRoundKey");
+    $display("Result = %h", result);
+
+    $finish;  // End the simulation
+  end
+endmodule

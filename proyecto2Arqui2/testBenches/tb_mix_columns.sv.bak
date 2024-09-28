@@ -1,0 +1,42 @@
+module tb_mix_columns;           
+
+    // Parameters for the testbench
+    parameter regSize = 32;   // Size of each register (32 bits)    
+    parameter vecSize = 4;    // Number of registers (columns)
+
+    // Declare input and output signals for the mix_columns module
+    logic [regSize-1:0] vect [vecSize-1:0];      // Input: vecSize x regSize bit matrix    
+    logic [regSize-1:0] new_vect [vecSize-1:0];  // Output: vecSize x regSize bit matrix
+
+    // Instantiate the mix_columns module
+    mix_columns #(regSize, vecSize) uut (
+        .vect(vect),
+        .new_vect(new_vect)
+    );
+
+    // Initial block to apply test vectors
+    initial begin        
+
+        // Test case 1
+        vect[0] = 32'h627a6f66;         
+        vect[1] = 32'h44b109c8;  
+        vect[2] = 32'h2b18330a;  
+        vect[3] = 32'h81c3b3e5;  
+
+        // Wait for a small delay for the output to stabilize
+        #10;
+
+        // Assertions for expected output values
+        // Replace the expected values with the correct ones based on the mix_columns function
+        assert(new_vect[0] == 32'h7b5b5465) else $error("Test Case 1 Failed: Expected 7b5b5465 but got %h", new_vect[0]);
+        assert(new_vect[1] == 32'h73745665) else $error("Test Case 2 Failed: Expected 73745665 but got %h", new_vect[1]);
+        assert(new_vect[2] == 32'h63746f72) else $error("Test Case 3 Failed: Expected 63746f72 but got %h", new_vect[2]);
+        assert(new_vect[3] == 32'h5d53475d) else $error("Test Case 4 Failed: Expected 5d53475d but got %h", new_vect[3]);
+
+        // Add more test cases as needed
+
+        // Finish the simulation        
+        $finish;
+    end
+
+endmodule
