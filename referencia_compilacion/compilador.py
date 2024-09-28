@@ -56,11 +56,13 @@ op_code_dict = {
 branchs_dict = {}
 
 # listas de instrucciones que esperan por cantidad de argumentos
-one_operand_instructions = ["SLT", "SLI", "SNI", "INC", "MVM", "ALM","KEXP","SUBB","SROS","MIXC","ARKE","SUBBINV","MIXCINV"]
+one_operand_instructions = ["SLT", "SLI", "SNI", "INC","KEXP","SUBB","SROS","MIXC","ARKE","SUBBINV","MIXCINV"]
 
 two_operand_instructions = [
     "CRGS",
     "CRGM",
+    "MVM", 
+    "ALM",
     "XOR",
     "SUM",
     "CMP",
