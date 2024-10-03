@@ -1,8 +1,8 @@
 `timescale 1ps / 1ps
 module regFile_test #(
-    parameter registerSize = 16,
-    parameter registerQuantity = 4,
-    parameter selectionBits = 4,
+    parameter regSize = 16,
+    parameter regQuantity = 4,
+    parameter selBits = 4,
     parameter vectorSize = 4
 )();
 
@@ -12,11 +12,11 @@ module regFile_test #(
     logic [3:0] rSel1, rSel2;
     logic [3:0] regToWrite;
     // Outputs
-    logic [vectorSize-1:0] [registerSize-1:0] dataIn;
-    logic [vectorSize-1:0] [registerSize-1:0] operand1, operand2;
+    logic [vectorSize-1:0] [regSize-1:0] dataIn;
+    logic [vectorSize-1:0] [regSize-1:0] operand1, operand2;
 
     reg_file #(
-        registerSize, registerQuantity, selectionBits, vectorSize
+        regSize, regQuantity, selBits, vectorSize
     ) regFile(
         .clk(clk),
         .reset(reset),
